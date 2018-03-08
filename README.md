@@ -12,6 +12,7 @@
 ###### When the customer order, I want to see the items so I can prepare for the delivery.
 - Need Pending-order table
 - Need Order page 
+- Need 'GET'
 - Need 'POST'
 - Need to show the order item number and how many items were placed 
 
@@ -35,4 +36,25 @@
 - Need Sign-up, Log-in page
 - Need auth 
 - Need users table 
+
+
+
+## CRUD
+
+|    :---:   | :---:  | :---:      |
+| **CREAT**  | POST   | User, Item |
+| **READ**   | GET    | Stock page, Pending order page, Completed order page |
+| **UPDATE** | PUT    | User, Stock page, Pending order page |
+| **DELETE** | DELETE | User, Stock page, Pending order page |
+
+
+
+
+
+
+
+
+
+
+
 
