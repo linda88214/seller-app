@@ -39,7 +39,7 @@
 - Need users table 
 - User can update the profile 
 
-
+<br />
 
 ## CRUD
 
@@ -50,7 +50,7 @@
 | **UPDATE** | PUT    | User, Stock page, Pending order page |
 | **DELETE** | DELETE | User, Stock page, Pending order page |
 
-
+<br />
 
 ## Pages Need 
 
@@ -62,7 +62,7 @@
 - Pending Order page 
 - Completed order page 
 
-
+<br />
 
 ## Table Need 
 
@@ -90,7 +90,8 @@
 | :---:        | :---:        | :---: | :---: |
 | 03/08/2018   | on000001     | Ellen | $20.99|
 
-
+<br />
+<br />
 
 ## Wireframe 
 
@@ -100,7 +101,7 @@
 ![Stock Page](./proposal-wireframe/Stock-Page.png)
 ![Complete Page](./proposal-wireframe/Complete-Page.png)
 
-
+<br />
 
 ## Timeline 
 
@@ -148,7 +149,7 @@
 ##### 03/16/2018 Friday 
 - SCIENCE FAIR 
 
-
+<br />
 
 ## Technologies 
 React.js, Ruby on Rails, Postgresql, HTML, CSS, Flexbox 
