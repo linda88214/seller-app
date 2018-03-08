@@ -88,22 +88,19 @@
 | 2        | S Watch   | SWT038730   | Silver Watch            | $299.98| 8     |
 
 #### Order Table 
-| order-id | stock-id | qty   | price  | buyer-id |
-| :---:    | :---:    | :---: | :---:  | :---:    |
-| 1        | 1        | 2     | $41.98 | 20       |
-| 1        | 2        | 1     | $299.98| 20       |
+| order-id | stock-id | qty   | price   | buyer-id |
+| :---:    | :---:    | :---: | :---:   | :---:    |
+| 1        | 1        | 2     | $41.98  | 20       |
+| 1        | 2        | 1     | $299.98 | 20       |
+| 2        | 1        | 1     | $20.99  | 22       |
 
-#### Pending Order Table
+#### Order Status Table
 
-| order-id | order-number | order-date | buyer-id | total   | status | note     | user-id |
-| :---:    | :---:        | :---:      | :---:    | :---:   | :---:  | :---:    | :---:   |
-| 1        | ON000001     | 03/05/2018 | 20       | $341.96 | delay  | no stock | 1       |
+| order-id | order-number | order-date | buyer-id | total   | status   | note     | user-id |
+| :---:    | :---:        | :---:      | :---:    | :---:   | :---:    | :---:    | :---:   |
+| 1        | ON000001     | 03/05/2018 | 20       | $341.96 | delay    | no stock | 1       |
+| 2        | ON000029     | 02/27/2018 | 22       | $20.99  | Complete |          | 1       |
 
-#### Complete Order Table 
-
-| order-id |complete-date | order-number | buyer-id | total | 
-| :---:    | :---:        | :---:        | :---:    | :---: |
-| 2        | 03/08/2018   | ON000067     | 22       | $20.99|
 
 <br />
 <br />
