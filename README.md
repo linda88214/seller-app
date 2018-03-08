@@ -86,7 +86,6 @@
 | 03/08/2018   | on000001     | Ellen | $20.99|
 
 
-
 ## Wireframe 
 
 ![SignUp](./proposal-wireframe/Sign-up.png)
