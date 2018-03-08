@@ -68,9 +68,9 @@
 
 #### Seller Table
 
-| seller-id | sellername   | first-name | last-name | email            | password |
-| :---:     | :---:        | :---:      | :---:     | :---:            | :---:    |
-| 1         | linda88214   | Linda      | Hu        | linda@seller.com | *******  |
+| seller-id | username   | first-name | last-name | email            | password |
+| :---:     | :---:      | :---:      | :---:     | :---:            | :---:    |
+| 1         | linda88214 | Linda      | Hu        | linda@seller.com | *******  |
 
 
 #### Buyer Table 
