@@ -77,12 +77,19 @@
 | stock-id | item-name | item-number | description             | price  | stock |
 | :---:    | :---:     | :---:       | :---:                   | :---:  | :---: |
 | 1        | Black Hat | BLH012984   | Novelty Black Derby Hat | $20.99 | 29    |
+| 2        | S Watch   | SWT038730   | Silver Watch            | $299.98| 8     |
+
+#### Order Table 
+| order-id | stock-id | qty   | price  | 
+| :---:    | :---:    | :---: | :---:  |
+| 1        | 1        | 2     | $41.98 |
+| 1        | 2        | 1     | $299.98|
 
 #### Pending Order Table
 
-| order-id | order-number | order-date | buyer | items-number| total  | status | note     | user-id |
-| :---:    | :---:        | :---:      | :---: | :---:       | :---:  | :---:  | :---:    | :---:   |
-| 1        | on000001     | 03/05/2018 | Ellen | BLH012984   | $20.99 | delay  | no stock | 1       |
+| pending-id | order-id | order-number | order-date | buyer | items-number| total  | status | note     | user-id |
+| :---:      | :---:    | :---:        | :---:      | :---: | :---:       | :---:  | :---:  | :---:    | :---:   |
+| 1          | 1        | on000001     | 03/05/2018 | Ellen | BLH012984   | $20.99 | delay  | no stock | 1       |
 
 #### Complete Order Table 
 
@@ -98,8 +105,11 @@
 ![SignUp](./proposal-wireframe/Sign-up.png)
 ![LogIn](./proposal-wireframe/Log-In.png)
 ![Profile Page](./proposal-wireframe/Profile.png)
-![Stock Page](./proposal-wireframe/Stock-Page.png)
-![Complete Page](./proposal-wireframe/Complete-Page.png)
+![Stocks Page](./proposal-wireframe/Stocks.png)
+![Create New Item](./proposal-wireframe/Stocks-new.png)
+![Update Item](./proposal-wireframe/Stocks-update.png)
+![Order Status](./proposal-wireframe/Order-status.png)
+![Complete Page](./proposal-wireframe/Complete.png)
 
 <br />
 
