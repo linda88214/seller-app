@@ -41,6 +41,7 @@
 
 ## CRUD
 
+| ---------- | ------ | ---------- |
 |    :---:   | :---:  | :---:      |
 | **CREAT**  | POST   | User, Item |
 | **READ**   | GET    | Stock page, Pending order page, Completed order page |
