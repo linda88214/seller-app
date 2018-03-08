@@ -49,7 +49,67 @@
 | **DELETE** | DELETE | User, Stock page, Pending order page |
 
 
+## Pages Need 
 
+- Sign-up Page
+- Log-in Page 
+- User Profile Page
+- Stock Show page 
+- Stock Update/Delete page
+- Pending Order page 
+- Completed order page 
+
+
+## Table Need 
+
+
+## Timeline 
+
+##### 03/08/2018 Thursday 
+- Proposal
+- Wireframe 
+
+##### 03/09/2018 Friday 
+- Set up project file 
+- Install rails for back-end 
+- Install react for front-end 
+- Build and seed database 
+
+##### 03/10/2018 Saturday 
+- Build CRUD with rails 
+- Build Components with react for each page 
+
+
+##### 03/11/2018 Sunday 
+- Create Sign up page and Log in page
+- Create a form and test
+- CSS work 
+
+
+##### 03/12/2018 Monday 
+- Create Stock show, update/delete page
+- Work on Search bar 
+- CSS work 
+
+
+##### 03/13/2018 Tuesday 
+- Create Pending page
+- Work on each show, update and delete 
+- CSS work 
+
+
+##### 03/14/2018 Wednesday 
+- Create Complete page
+- CSS work 
+
+
+##### 03/15/2018 Thursday 
+- Testing 
+- Styling Fix 
+
+
+##### 03/16/2018 Friday 
+- SCIENCE FAIR 
 
 
 
