@@ -41,7 +41,7 @@
 
 ## CRUD
 
-| ---------- | ------ | ---------- |
+| CRUD | METHOD | NEED FOR |
 |    :---:   | :---:  | :---:      |
 | **CREAT**  | POST   | User, Item |
 | **READ**   | GET    | Stock page, Pending order page, Completed order page |
