@@ -75,7 +75,7 @@ One pending order has many items in stocks table
 ![LogIn](./proposal-wireframe/Log-In.png)
 ![Profile Page](./proposal-wireframe/Profile.png)
 ![Stock Page](./proposal-wireframe/Stock-Page.png)
-![Complete Page](./proposal-wireframe/Complete-page.png)
+![Complete Page](./proposal-wireframe/Complete-Page.png)
 
 ## Timeline 
 
