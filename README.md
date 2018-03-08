@@ -61,7 +61,21 @@
 
 
 ## Table Need 
+- Users table 
+- Stocks table 
+- Pending order table 
+- Complete order table 
 
+One user has many Completed order 
+One pending order has many items in stocks table 
+
+## Wireframe 
+
+![SignUp](./proposal-wireframe/Sign-up.png)
+![LogIn](./proposal-wireframe/Log-In.png)
+![Profile Page](./proposal-wireframe/Profile.png)
+![Stock Page](./proposal-wireframe/Stock-Page.png)
+![Complete Page](./proposal-wireframe/Complete-page.png)
 
 ## Timeline 
 
