@@ -66,11 +66,11 @@
 
 ## Table Need 
 
-#### User Table
+#### Seller Table
 
-| user-id | username   | first-name | last-name | email            | password |
-| :---:   | :---:      | :---:      | :---:     | :---:            | :---:    |
-| 1       | linda88214 | Linda      | Hu        | linda@seller.com | *******  |
+| seller-id | sellername   | first-name | last-name | email            | password |
+| :---:     | :---:        | :---:      | :---:     | :---:            | :---:    |
+| 1         | linda88214   | Linda      | Hu        | linda@seller.com | *******  |
 
 
 #### Buyer Table 
@@ -96,10 +96,10 @@
 
 #### Order Status Table
 
-| order-id | order-number | order-date | buyer-id | total   | status   | note     | user-id |
-| :---:    | :---:        | :---:      | :---:    | :---:   | :---:    | :---:    | :---:   |
-| 1        | ON000001     | 03/05/2018 | 20       | $341.96 | delay    | no stock | 1       |
-| 2        | ON000029     | 02/27/2018 | 22       | $20.99  | Complete |          | 1       |
+| order-id | order-number | order-date | buyer-id | total   | status   | note     | seller-id |
+| :---:    | :---:        | :---:      | :---:    | :---:   | :---:    | :---:    | :---:     |
+| 1        | ON000001     | 03/05/2018 | 20       | $341.96 | delay    | no stock | 1         |
+| 2        | ON000029     | 02/27/2018 | 22       | $20.99  | Complete |          | 1         |
 
 
 <br />
