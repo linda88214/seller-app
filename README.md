@@ -1,4 +1,4 @@
-# Online Shopping Mall
+# Seller App
 
 ### Proposal 
 
