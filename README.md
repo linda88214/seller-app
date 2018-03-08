@@ -80,9 +80,9 @@
 
 #### Pending Order Table
 
-| order-id | order-number | buyer | items-number| total  | status | note     | user-id |
-| :---:    | :---:        | :---: | :---:       | :---:  | :---:  | :---:    | :---:   |
-| 1        | on000001     | Ellen | BLH012984   | $20.99 | delay  | no stock | 1       |
+| order-id | order-number | order-date | buyer | items-number| total  | status | note     | user-id |
+| :---:    | :---:        | :---:      | :---: | :---:       | :---:  | :---:  | :---:    | :---:   |
+| 1        | on000001     | 03/05/2018 | Ellen | BLH012984   | $20.99 | delay  | no stock | 1       |
 
 #### Complete Order Table 
 
