@@ -107,14 +107,14 @@
 
 ## Wireframe 
 
-![SignUp](./proposal-wireframe/Sign-up.png)
-![LogIn](./proposal-wireframe/Log-In.png)
-![Profile Page](./proposal-wireframe/Profile.png)
-![Stocks Page](./proposal-wireframe/Stocks.png)
-![Create New Item](./proposal-wireframe/Stocks-new.png)
-![Update Item](./proposal-wireframe/Stocks-update.png)
-![Order Status](./proposal-wireframe/Order-status.png)
-![Complete Page](./proposal-wireframe/Complete.png)
+![SignUp](./Wireframe/Sign-up.png)
+![LogIn](./Wireframe/Log-In.png)
+![Profile Page](./Wireframe/Profile.png)
+![Stocks Page](./Wireframe/Stocks.png)
+![Create New Item](./Wireframe/Stocks-new.png)
+![Update Item](./Wireframe/Stocks-update.png)
+![Order Status](./Wireframe/Order-status.png)
+![Complete Page](./Wreframe/Complete.png)
 
 <br />
 
