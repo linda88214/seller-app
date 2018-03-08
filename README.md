@@ -62,12 +62,30 @@
 
 ## Table Need 
 - Users table 
+
+| user-id | username   | first-name | last-name | email            | password |
+| :---:   | :---:      | :---:      | :---:     | :---:            | :---:    |
+| 1       | linda88214 | Linda      | Hu        | linda@seller.com | *******  |
+
 - Stocks table 
+
+| stock-id | item-name | item-number | description             | price  | stock |
+| :---:    | :---:     | :---:       | :---:                   | :---:  | :---: |
+| 1        | Black Hat | BLH012984   | Novelty Black Derby Hat | $20.99 | 29    |
+
 - Pending order table 
+
+| order-id | order-number | buyer | items-number| total  | status |
+| :---:    | :---:        | :---: | :---:       | :---:  | :---:  |
+| 1        | on000001     | Ellen | BLH012984   | $20.99 | Pending| 
+
 - Complete order table 
 
-One user has many Completed order 
-One pending order has many items in stocks table 
+|complete-date | order-number | buyer | total | 
+| :---:        | :---:        | :---: | :---: |
+| 03/08/2018   | on000001     | Ellen | $20.99|
+
+
 
 ## Wireframe 
 
@@ -85,13 +103,11 @@ One pending order has many items in stocks table
 
 ##### 03/09/2018 Friday 
 - Set up project file 
-- Install rails for back-end 
-- Install react for front-end 
 - Build and seed database 
 
 ##### 03/10/2018 Saturday 
-- Build CRUD with rails 
-- Build Components with react for each page 
+- Build CRUD with rails (routes, controllers, models)
+- Build Components with react for each page (routes)
 
 
 ##### 03/11/2018 Sunday 
@@ -126,7 +142,8 @@ One pending order has many items in stocks table
 - SCIENCE FAIR 
 
 
-
+## Technologies 
+React.js, Ruby on Rails, Postgresql, HTML, CSS, Flexbox 
 
 
 
