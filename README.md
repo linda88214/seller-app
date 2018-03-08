@@ -65,25 +65,26 @@
 
 
 ## Table Need 
-- Users table 
+
+#### User Table
 
 | user-id | username   | first-name | last-name | email            | password |
 | :---:   | :---:      | :---:      | :---:     | :---:            | :---:    |
 | 1       | linda88214 | Linda      | Hu        | linda@seller.com | *******  |
 
-- Stocks table 
+#### Stock Table
 
 | stock-id | item-name | item-number | description             | price  | stock |
 | :---:    | :---:     | :---:       | :---:                   | :---:  | :---: |
 | 1        | Black Hat | BLH012984   | Novelty Black Derby Hat | $20.99 | 29    |
 
-- Pending order table 
+#### Pending Order Table
 
 | order-id | order-number | buyer | items-number| total  | status |
 | :---:    | :---:        | :---: | :---:       | :---:  | :---:  |
 | 1        | on000001     | Ellen | BLH012984   | $20.99 | Pending| 
 
-- Complete order table 
+#### Complete Order Table 
 
 |complete-date | order-number | buyer | total | 
 | :---:        | :---:        | :---: | :---: |
