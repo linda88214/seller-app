@@ -72,6 +72,14 @@
 | :---:   | :---:      | :---:      | :---:     | :---:            | :---:    |
 | 1       | linda88214 | Linda      | Hu        | linda@seller.com | *******  |
 
+
+#### Buyer Table 
+
+| buyer-id | buyer-name | email           | address                                | phone-number |
+|:---:     | :---:      | :---:           | :---:                                  | :---:        |
+| 20       | Ellen      | ellen@yahoo.com | 10 East 21st Street New York, NY 10010 | 123)456-7890 |
+| 22       | Nancy      | nancy@gmail.com | 10 East 21st Street New York, NY 10010 | 123)456-7890 |
+
 #### Stock Table
 
 | stock-id | item-name | item-number | description             | price  | stock |
@@ -80,22 +88,22 @@
 | 2        | S Watch   | SWT038730   | Silver Watch            | $299.98| 8     |
 
 #### Order Table 
-| order-id | stock-id | qty   | price  | 
-| :---:    | :---:    | :---: | :---:  |
-| 1        | 1        | 2     | $41.98 |
-| 1        | 2        | 1     | $299.98|
+| order-id | stock-id | qty   | price  | buyer-id |
+| :---:    | :---:    | :---: | :---:  | :---:    |
+| 1        | 1        | 2     | $41.98 | 20       |
+| 1        | 2        | 1     | $299.98| 20       |
 
 #### Pending Order Table
 
-| pending-id | order-id | order-number | order-date | buyer | items-number| total  | status | note     | user-id |
-| :---:      | :---:    | :---:        | :---:      | :---: | :---:       | :---:  | :---:  | :---:    | :---:   |
-| 1          | 1        | on000001     | 03/05/2018 | Ellen | BLH012984   | $20.99 | delay  | no stock | 1       |
+| order-id | order-number | order-date | buyer-id | total   | status | note     | user-id |
+| :---:    | :---:        | :---:      | :---:    | :---:   | :---:  | :---:    | :---:   |
+| 1        | ON000001     | 03/05/2018 | 20       | $341.96 | delay  | no stock | 1       |
 
 #### Complete Order Table 
 
-|complete-date | order-number | buyer | total | 
-| :---:        | :---:        | :---: | :---: |
-| 03/08/2018   | on000001     | Ellen | $20.99|
+| order-id |complete-date | order-number | buyer-id | total | 
+| :---:    | :---:        | :---:        | :---:    | :---: |
+| 2        | 03/08/2018   | ON000067     | 22       | $20.99|
 
 <br />
 <br />
