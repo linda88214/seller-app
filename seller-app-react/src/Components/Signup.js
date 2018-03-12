@@ -29,9 +29,11 @@ constructor(props) {
     el.preventDefault();
     axios({
       url: 'http://localhost:3000/sellers',
-      method: 'POST'
+      method: 'POST',
+      data: this.state
     }).then(response => {
       console.log('handleSubmit: ', response.data);
+      this.props.history.push("/sellers/login")
     });
   }
 
@@ -50,7 +52,7 @@ return(
       <h1>SIGN UP</h1>
       <label htmlFor="username">
         <p>Username:</p>
-        <input type="text" name="Username" onChange={this.handleChange} />
+        <input type="text" name="username" onChange={this.handleChange} />
       </label>
       <br />
       <label htmlFor="firstname">
@@ -73,7 +75,7 @@ return(
         <input type="password" name="password" onChange={this.handleChange} />
       </label>
       <br />
-      <button>Submit</button>
+      <button type="submit" value="submit">Submit</button>
     </form>
   </div>
 )
