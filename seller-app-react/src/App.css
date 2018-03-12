@@ -1,0 +1,234 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* Color Theme */
+
+/* #233b5d   dark blue */
+/* #8e9190   dark gray */
+/* #0b575c   green */
+/* #e1d6d1   light gray */
+/* #da3149   red */ 
+
+@import url('https://fonts.googleapis.com/css?family=Mina');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mina', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/***************************************
+  LOGIN PAGE & SIGNUP PAGE
+***************************************/
+
+#login-page,
+#signup-page {
+  background-color: #233b5d;
+  height: 100vh;
+  color: white;
+}
+
+#login-page h1,
+#signup-page h1 {
+  font-size: 40px;
+  padding-top: 25px;
+}
+
+#login-page form,
+#signup-page form {
+  border: 1px solid white;
+  width: 50%;
+  height: 500px;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  border-radius: 5px;
+}
+
+#login-page label {
+  width: 100%;
+}
+
+#login-page p {
+  font-size: 25px;
+  margin: 40px auto 20px auto;
+}
+
+#login-page input, 
+#signup-page input {
+  width: 300px;
+  height: 30px;
+  text-indent: 5px;
+}
+
+#login-page button,
+#signup-page button,
+#login-page .signup-link,
+#signup-page .login-link {
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-top: 40px;
+  color: white;
+}
+
+#login-page button:hover,
+#signup-page button:hover,
+#login-page .signup-link:hover,
+#signup-page .login-link:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #233b5d;
+  color: #233b5d;
+}
+
+#login-page .signup-link,
+#signup-page .login-link {
+  position: absolute;
+  right: 30px;
+  width: 120px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#signup-page p {
+  display: inline-block;
+  padding: 15px;
+  width: 150px;
+}
+
+
+/***************************************
+  NAVIGATION
+***************************************/
+
+#main-nav {
+  width: 16%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  background-color: #233b5d;
+}
+
+#main-nav .logo {
+  color: white;
+  padding: 18px 0;
+  font-size: 30px;
+}
+
+#main-nav ul {
+  margin-top: 70px;
+}
+
+#main-nav li {
+  height: 70px;
+  padding-top: 30px;
+  border-bottom: 1px solid white;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+#main-nav .dropdown {
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+#main-nav .dropdown-content {
+  position: absolute;
+  z-index: 1;
+}
+
+#main-nav .dropdown-content a {
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: #da3149;
+}
+
+.show {
+  display: block;
+}
+
+
+/***************************************
+  PROFILE PAGE
+***************************************/
+
+#profile-page-section {
+  background-color: white;
+  height: 100vh;
+}
+
+#profile-page-section .profile-page-heading h1 {
+  background-color: #233b5d;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  padding: 18px 0;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
