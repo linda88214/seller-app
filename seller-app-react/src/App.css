@@ -1,32 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 
 /* Color Theme */
 
@@ -44,6 +15,7 @@
   font-family: 'Mina', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 /***************************************
@@ -133,7 +105,7 @@
 ***************************************/
 
 #main-nav {
-  width: 16%;
+  width: 250px;
   height: 100vh;
   position: absolute;
   left: 0;
@@ -167,26 +139,54 @@
   cursor: pointer;
 }
 
+#main-nav .dropdown:hover > ul {
+  display: inherit;
+  height: 10px;
+}
+
 #main-nav .dropdown-content {
   position: absolute;
+  display: none;
   z-index: 1;
+  top: -70px;
+  left: 250px;
+  list-style: none;
+  width: 200px;
+}
+
+#main-nav .dropdown-content li {
+  display: list-item;
+  position: relative;
+  float: none;
+  width: 100%;
+  background-color: #233b5d
 }
 
 #main-nav .dropdown-content a {
   color: white;
-  padding: 10px 0;
+  /*padding: 10px 0;*/
   text-decoration: none;
   display: inline-block;
   width: 100%;
+  height: 100px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content li a:hover {
   background-color: #ddd;
   color: #da3149;
 }
 
 .show {
   display: block;
+}
+
+.nav-page-heading h1 {
+  background-color: #233b5d;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  padding: 18px 0;
+  color: white;
 }
 
 
@@ -199,16 +199,33 @@
   height: 100vh;
 }
 
-#profile-page-section .profile-page-heading h1 {
-  background-color: #233b5d;
-  width: 100%;
-  text-align: center;
-  font-size: 30px;
-  padding: 18px 0;
-  color: white;
+#profile-page-section form {
+  padding: 100px 0 0 200px;
 }
 
+#profile-page-section form p {
+  display: inline-block;
+  padding: 20px;
+  width: 200px;
+  color: #233b5d;
+  font-weight: bold;
+}
 
+#profile-page-section form input {
+  width: 300px;
+}
+
+#profile-page-section form input[value]{
+  color: #8e9190;
+}
+
+#profile-page-section form button {
+  width: 150px;
+  margin-top: 50px;
+  background-color: #da3149;
+  color: white;
+  border-radius: 3px;
+}
 
 
 
