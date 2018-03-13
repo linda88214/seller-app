@@ -11,7 +11,8 @@ export default class Profile extends Component {
 			firstname: '',
 			lastname: '',
 			email: '',
-			password: ''
+			password: '',
+			currentUserId: null
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -32,19 +33,28 @@ export default class Profile extends Component {
 			url: `http://localhost:3000/sellers/${this.props.match.params.id}`,
 			method: 'PUT',
 			data: this.state
-			}).then(response => {
+		}).then(response => {
 			console.log('handleSubmit: ', response.data);
 		})
-		// 	.catch(err => {
-		// 	console.log('err: ', err.response)
-		// })
+			.catch(err => {
+			console.log('err: ', err.response)
+		})
 	}
 
-	componentDidMount() {
-		axios({ url: 'http://localhost:3000/sellers' }).then(response => {
-		  	console.log('data:', response.data);
-		});
+	deleteProfile(el){
+		el.preventDefault();
+		console.log("Delete button clicked")
+		axios({
+			url: `http://localhost:3000/sellers/${this.props.match.params.id}`,
+			method: 'DELETE',
+			data: this.state
+		}).then(response => {
+			console.log('Profile Deleted', response.data)
+		}).catch(err => {
+			console.log('error: ', err.response)
+		})
 	}
+
 	render(){
 		if(this.props.allUsers === null) {
 			return "Loading";
@@ -52,8 +62,9 @@ export default class Profile extends Component {
 		else {
 			// console.log('Profile file: ', this.props.allUsers)
 			const currentUser = this.props.allUsers.find(el => {
+				// console.log(el.id)
 	    		return(
-	    			// el.id == this.props.match.params.id
+	    			// converting string id to integer 
 	    			el.id === parseInt(this.props.match.params.id, 10)
 	    		)
 	    	})
@@ -62,7 +73,11 @@ export default class Profile extends Component {
 	    	}
 	    	return(
 		    	<section id="profile-page-section">
-	    			
+	    			<Nav currentUser={this.props.user} />
+	    			<div className="delete-profile">
+	    				<button onClick={this.deleteProfile}>&#10005;</button>
+	    				<span className="delete-text">DELETE</span>
+	    			</div>
 	    			<form onSubmit={this.handleSubmit}>
 						<label htmlFor="username">
 							<p>Username:</p>

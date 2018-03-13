@@ -5,7 +5,7 @@ export default class Stocks extends Component {
 	render(){
 		return (
 			<section id="newstock-page-section">
-    			<Nav user={this.props.user}/>
+    			<Nav currentUser={this.props.user}/>
     			<form className="newstock-form">
     				<h1>Create New Item</h1>
     				<label>

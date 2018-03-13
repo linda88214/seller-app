@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import axios from 'axios'
 import './App.css';
 
-import Nav from "./Components/Nav";
+// import Nav from "./Components/Nav";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Profile from "./Components/Profile";
@@ -18,7 +18,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      id: 4,
+      id: 7,
       allUsers: null,
       currentUser: []
     };
@@ -80,7 +80,6 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} allUsers={this.state.allUsers}/>
                     <Profile {...props} 
                     user={this.state.currentUser} 
                     allUsers={this.state.allUsers}/>

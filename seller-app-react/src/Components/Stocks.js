@@ -9,6 +9,7 @@ export default class Stocks extends Component {
 		this.state = {
 			allStocks: []
 		}
+		this.allStocks = this.allStocks.bind(this)
 	}
 
 	allStocks(){
@@ -16,17 +17,27 @@ export default class Stocks extends Component {
 		  url: 'http://localhost:3000/stocks',
 		  method: 'get'
 		}).then(response => {
-		  console.log('allStocks: ', response.data);
+		  // console.log('allStocks: ', response);
 		  this.setState({ allStocks: response.data });
 		});
 	}
 
+	componentDidMount(){
+		this.allStocks()
+	}
+
 	render(){
-		console.log(this.allStocks)
+
+		this.state.allStocks.map(el => {
+			
+		})
+
 		return (
 			<section id="stocks-page-section">
-    			<Nav user={this.props.user}/>
-    			
+    			<Nav currentUser={this.props.user}/>
+    			<div>
+
+    			</div>
 			</section>
 		)
 	}
