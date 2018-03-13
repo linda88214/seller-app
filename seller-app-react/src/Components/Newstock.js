@@ -9,23 +9,18 @@ export default class Stocks extends Component {
     			<form className="newstock-form">
     				<h1>Create New Item</h1>
     				<label>
-    					<p>Item Name</p>
     					<input />
     				</label>
     				<label>
-    					<p>Item Number</p>
     					<input />
     				</label>
     				<label>
-    					<p>Description</p>
     					<input />
     				</label>
     				<label>
-    					<p>Price</p>
     					<input />
     				</label>
     				<label>
-    					<p>Stock</p>
     					<input />
     				</label>
     				<button>CREATE</button>

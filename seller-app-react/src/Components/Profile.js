@@ -17,6 +17,7 @@ export default class Profile extends Component {
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.deleteProfile = this.deleteProfile.bind(this);
 	}
 
 	handleChange(event) {
@@ -35,6 +36,7 @@ export default class Profile extends Component {
 			data: this.state
 		}).then(response => {
 			console.log('handleSubmit: ', response.data);
+			this.setState(this.props.history.push(`/sellers/user/profile/${this.props.match.params.id}`))
 		})
 			.catch(err => {
 			console.log('err: ', err.response)
@@ -46,10 +48,11 @@ export default class Profile extends Component {
 		console.log("Delete button clicked")
 		axios({
 			url: `http://localhost:3000/sellers/${this.props.match.params.id}`,
-			method: 'DELETE',
-			data: this.state
+			method: 'DELETE'
 		}).then(response => {
 			console.log('Profile Deleted', response.data)
+
+			this.setState(this.props.history.push('/sellers/login'))
 		}).catch(err => {
 			console.log('error: ', err.response)
 		})

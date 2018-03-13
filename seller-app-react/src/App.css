@@ -7,7 +7,7 @@
 /* #e1d6d1   light gray */
 /* #da3149   red */ 
 
-@import url('https://fonts.googleapis.com/css?family=Mina');
+@import url('https://fonts.googleapis.com/css?family=Mina|Roboto');
 
 * {
   margin: 0;
@@ -16,6 +16,10 @@
   font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
+}
+
+li {
+  list-style: none;
 }
 
 /***************************************
@@ -284,13 +288,75 @@
     opacity: 1;
 }
 
+/***************************************
+  STOCKS PAGE / ORDERS PAGE
+***************************************/
 
+#stocks-page-section .allstocks-table-div {
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  /*border: 1px solid black;*/
+  height: 400px;
+  overflow: hidden;
+}
 
+.allorders-table-div {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  height: 400px;
+}
 
+.allorderstatus-table-div {
+  position: absolute;
+  top: 200px;
+  right: 120px;
+  height: 400px;
+}
 
+table th {
+  font-weight: bold;
+  padding: 15px;
+  font-family: 'Roboto', sans-serif;
+}
 
+table td {
+  border: 1px solid #8e9190;
+  font-size: 18px;
+  font-weight: normal;
+  width: 150px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+}
 
+#stocks-page-section table td:nth-child(1),
+#stocks-page-section table td:nth-child(2) {
+  width: 170px;
+}
 
+#stocks-page-section table td:nth-child(3){
+  width: 500px;
+}
+
+#stocks-page-section table td:last-child{
+  width: 80px;
+}
+
+table tr:nth-child(even){
+  background-color: #e1d6d1;
+}
+
+#stocks-page-section .newstock-form {
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+}
+
+.searchbar-input-wrap input {
+  width: 600px;
+  padding: 30px;
+}
 
 
 

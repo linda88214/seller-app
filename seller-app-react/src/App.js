@@ -18,7 +18,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      id: 7,
+      id: 5,
       allUsers: null,
       currentUser: []
     };
@@ -30,9 +30,8 @@ class App extends Component {
       url: 'http://localhost:3000/sellers',
       method: 'get'
     }).then(response => {
-      // console.log('allUsers: ', response.data);
       this.setState({ allUsers: response.data })
-      console.log('allUsers: ', this.state.allUsers);
+      // console.log('allUsers: ', this.state.allUsers);
     });
   }
 

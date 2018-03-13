@@ -18,7 +18,7 @@ class SellersController < ApplicationController
 		seller = Seller.new(seller_params)
 
 		if seller.save
-			redirect_to sellers_path
+			render plain: "seller created"
 		else
 			render :action => :new
 		end
@@ -38,7 +38,6 @@ class SellersController < ApplicationController
 	def destroy
 		seller = Seller.find(params[:id])
 		seller.destroy!
-		redirect_to sellers_path
 		render plain: "seller Deleted"
 	end
 
