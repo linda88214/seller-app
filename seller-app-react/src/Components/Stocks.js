@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Nav from './Nav'
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -48,6 +47,11 @@ export default class Stocks extends Component {
 	// 	});
 	// }
 
+	searchItem(el) {
+		el.preventDefault();
+
+	}
+
 	componentDidMount(){
 		this.allStocks()
 		// this.handleChange()
@@ -70,12 +74,9 @@ export default class Stocks extends Component {
 
 		return (
 			<section id="stocks-page-section">
-    			<Nav currentUser={this.props.user}/>
-    			<div className="searchbar-input-wrap">
-			      <input type="search" placeholder="Search" />
-			      <i className="searchbar-icon"></i>
-			      <span className="input-clear-button"></span>
-			    </div>
+    			<form onSubmit="" className="search-div">
+    				<input type="search" placeholder="Search with Item Number" />
+    			</form>
     			<div className="allstocks-table-div">
     				<table className="allstocks-table">
     					<thead>

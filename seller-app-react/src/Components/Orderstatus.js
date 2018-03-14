@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Nav from './Nav'
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -44,7 +43,6 @@ export default class Stocks extends Component {
 
 		return (
 			<section id="orderstatus-page-section">
-    			<Nav currentUser={this.props.user}/>
     			<div className="allorderstatus-table-div">
     				<table className="allorderstatus-table">
     					<thead>

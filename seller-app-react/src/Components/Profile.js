@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Nav from './Nav';
+
 
 export default class Profile extends Component {
 	constructor(props) {
@@ -31,12 +31,12 @@ export default class Profile extends Component {
 	handleSubmit(el) {
 		el.preventDefault();
 		axios({
-			url: `http://localhost:3000/sellers/${this.props.match.params.id}`,
+			url: `http://localhost:3000/users/${this.props.match.params.id}`,
 			method: 'PUT',
 			data: this.state
 		}).then(response => {
 			console.log('handleSubmit: ', response.data);
-			this.setState(this.props.history.push(`/sellers/user/profile/${this.props.match.params.id}`))
+			this.setState(this.props.history.push(`/user/profile/${this.props.match.params.id}`))
 		})
 			.catch(err => {
 			console.log('err: ', err.response)
@@ -47,12 +47,11 @@ export default class Profile extends Component {
 		el.preventDefault();
 		console.log("Delete button clicked")
 		axios({
-			url: `http://localhost:3000/sellers/${this.props.match.params.id}`,
+			url: `http://localhost:3000/users/${this.props.match.params.id}`,
 			method: 'DELETE'
 		}).then(response => {
 			console.log('Profile Deleted', response.data)
-
-			this.setState(this.props.history.push('/sellers/login'))
+			this.setState(this.props.history.push('/user/login'))
 		}).catch(err => {
 			console.log('error: ', err.response)
 		})
@@ -64,19 +63,23 @@ export default class Profile extends Component {
 		}
 		else {
 			// console.log('Profile file: ', this.props.allUsers)
-			const currentUser = this.props.allUsers.find(el => {
-				// console.log(el.id)
-	    		return(
-	    			// converting string id to integer 
-	    			el.id === parseInt(this.props.match.params.id, 10)
-	    		)
-	    	})
+			// const currentUser = this.props.allUsers.find(el => {
+			// 	// console.log(el.id)
+	  //   		return(
+	  //   			// converting string id to integer 
+	  //   			el.id === parseInt(this.props.match.params.id, 10)
+	  //   		)
+	  //   	})
+
+	  		const currentUser = this.props.currentUser
+
 	    	if(!currentUser){
 	    		return "Please Log In"
 	    	}
+
+	    	console.log('profile page: ',this.props.currentUser)
 	    	return(
 		    	<section id="profile-page-section">
-	    			<Nav currentUser={this.props.user} />
 	    			<div className="delete-profile">
 	    				<button onClick={this.deleteProfile}>&#10005;</button>
 	    				<span className="delete-text">DELETE</span>

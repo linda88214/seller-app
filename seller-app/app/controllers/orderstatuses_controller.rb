@@ -1,4 +1,6 @@
 class OrderstatusesController < ApplicationController
+	# before_action :ensure_signed_in
+	
 	def index
 		orderstatuses = Orderstatus.all
 		render json: orderstatuses

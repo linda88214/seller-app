@@ -1,4 +1,6 @@
 class BuyersController < ApplicationController
+	# before_action :ensure_signed_in
+	
 	def index
 		buyers = Buyer.all
 		render json: buyers

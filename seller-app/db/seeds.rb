@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Seller.create!([
-	{username: "linda88214", firstname: "Linda", lastname: "Hu", email: "linda@seller.com"}
-])
+# User.create!([
+# 	{username: "linda88214", firstname: "Linda", lastname: "Hu", email: "linda@seller.com"}
+# ])
 
 Stock.create!([
 	{itemname: "Black Hat", itemnumber: "BLH029384", description: "Novelty Black Derby Hat", price: 20.99, stock: 29},

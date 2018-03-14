@@ -1,4 +1,6 @@
 class StocksController < ApplicationController
+	# before_action :ensure_signed_in
+	
 	def index
 		stocks = Stock.all
 		render json: stocks

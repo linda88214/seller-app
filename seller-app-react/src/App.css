@@ -86,6 +86,11 @@ li {
   color: white;
 }
 
+#signup-page button a {
+  color: white;
+  text-decoration: none;
+}
+
 #login-page button:hover,
 #signup-page button:hover,
 #login-page .signup-link:hover,
@@ -358,11 +363,27 @@ table tr:nth-child(even){
   padding: 30px;
 }
 
+/***************************************
+  SEARCH BAR
+***************************************/
 
+.search-div {
+  margin-top: 50px;
+  margin-left: 300px;
+}
 
+.search-div input {
+  width: 500px;
+  height: 20px;
+  padding: 5px;
+}
 
+.search-div input[placeholder] {
+  color: red;
+}
 
-
-
-
+.search-div button {
+  font-size: 18px;
+  
+}
 
