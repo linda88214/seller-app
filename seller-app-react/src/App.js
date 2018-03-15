@@ -13,6 +13,7 @@ import Newstock from "./Components/Newstock";
 import UpdateStock from "./Components/Updatestock";
 import Orders from "./Components/Orders";
 import Orderstatus from "./Components/Orderstatus";
+import Buyers from "./Components/Buyers";
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
       id: null,
       allUsers: null,
       currentUser: [],
+      allCustomers: null,
       redirect: false
     };
   }
@@ -32,7 +34,7 @@ class App extends Component {
       method: 'get'
     }).then(response => {
       this.setState({ allUsers: response.data })
-      console.log('allUsers: ', this.state.allUsers);
+      // console.log('allUsers: ', this.state.allUsers);
     });
   }
 
@@ -46,9 +48,20 @@ class App extends Component {
     });
   }
 
+  allCustomers() {
+    axios({
+      url: `http://localhost:3000/buyers`,
+      method: 'GET'
+    }).then(response => {
+      this.setState({ allCustomers: response.data })
+      // console.log('allCustomers: ', this.state.allCustomers);
+    });
+  }
+
   componentDidMount(){
     this.allUsers();
     this.currentUser();
+    this.allCustomers();
   }
 
   register(data) {
@@ -77,6 +90,7 @@ class App extends Component {
   logout(ev) {
     ev.preventDefault();
     TokenService.destroy();
+    window.location.reload()
   }
 
   checkLogin() {
@@ -111,10 +125,10 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Profile {...props} 
                     currentUser={this.state.currentUser}
-                    allUsers={this.state.allUsers}/>
+                    allUsers={this.state.allUsers} />
                   </div>
                 )
               }}
@@ -124,7 +138,7 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Stocks {...props} user={this.state.currentUser}/>
                   </div>
                 )
@@ -135,7 +149,7 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Newstock {...props} user={this.state.currentUser} />
                   </div>
                 )
@@ -146,7 +160,7 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <UpdateStock {...props} user={this.state.currentUser} />
                   </div>
                 )
@@ -157,7 +171,7 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Orders {...props} user={this.state.currentUser} />
                   </div>
                 )
@@ -168,8 +182,19 @@ class App extends Component {
               render={props => {
                 return (
                   <div>
-                    <Nav {...props} currentUser={this.state.currentUser}/>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Orderstatus {...props} user={this.state.currentUser} />
+                  </div>
+                )
+              }}
+            />
+
+            <Route exact path="/user/:id/buyers"
+              render={props => {
+                return (
+                  <div>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
+                    <Buyers {...props} allCustomers={this.state.allCustomers} />
                   </div>
                 )
               }}

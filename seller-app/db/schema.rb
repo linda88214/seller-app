@@ -19,15 +19,16 @@ ActiveRecord::Schema.define(version: 20180309191242) do
     t.string "name"
     t.string "email"
     t.string "address"
-    t.integer "phonenumber"
+    t.string "phonenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "ordername"
     t.integer "qty"
-    t.integer "price"
     t.integer "total"
+    t.bigint "user_id"
     t.bigint "buyer_id"
     t.bigint "stock_id"
     t.bigint "orderstatus_id"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180309191242) do
     t.index ["buyer_id"], name: "index_orders_on_buyer_id"
     t.index ["orderstatus_id"], name: "index_orders_on_orderstatus_id"
     t.index ["stock_id"], name: "index_orders_on_stock_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "orderstatuses", force: :cascade do |t|
@@ -56,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180309191242) do
     t.string "itemname"
     t.string "itemnumber"
     t.string "description"
-    t.integer "price"
+    t.string "price"
     t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

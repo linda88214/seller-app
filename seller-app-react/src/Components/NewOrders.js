@@ -8,22 +8,28 @@ export default class Stocks extends Component {
 		this.state = {
 			allOrders: []
 		}
-		this.allOrders = this.allOrders.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
-	allOrders(){
-		axios({
-			url: 'http://localhost:3000/orders',
-			method: 'get'
-		}).then(response => {
-			console.log('allOrders: ', response);
-			this.setState({ allOrders: response.data });
-		});
-	}
+	handleChange(e){
+        const key = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [key]: value
+        })
+    }
 
-	componentDidMount(){
-		this.allOrders();
-	}
+    handleSubmit(e) {
+        e.preventDefault();
+        axios('http://localhost:3000/stocks', {
+            method: "POST",
+            data: this.state
+        }).then(resp => {
+            console.log("posted?")
+            
+        })
+    }
 
 	render(){
 

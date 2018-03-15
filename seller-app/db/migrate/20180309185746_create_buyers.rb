@@ -4,7 +4,7 @@ class CreateBuyers < ActiveRecord::Migration[5.1]
     	t.string :name
     	t.string :email 
     	t.string :address
-    	t.integer :phonenumber
+    	t.string :phonenumber
 
       t.timestamps
     end

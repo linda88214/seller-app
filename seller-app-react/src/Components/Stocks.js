@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
+import Newstock from "./Newstock";
+
 export default class Stocks extends Component {
 	constructor(props){
 		super(props)
 
 		this.state = {
-			allStocks: [],
-			itemname: '',
-			itemnumber: '',
-			description: '',
-			price: null,
-			stock: null
+			allStocks: []
 		}
 		this.allStocks = this.allStocks.bind(this)
-		// this.handleChange = this.handleChange.bind(this)
-		// this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	allStocks(){
@@ -23,29 +18,10 @@ export default class Stocks extends Component {
 			url: 'http://localhost:3000/stocks',
 			method: 'get'
 		}).then(response => {
-			console.log('allStocks: ', response);
+			// console.log('allStocks: ', response);
 			this.setState({ allStocks: response.data });
 		});
 	}
-
-	// handleChange(el) {
-	// 	const key = el.target.name;
-	// 	const value = el.target.value;
-	// 		this.setState({
-	// 		[key]: value
-	// 	});
-	// }
-
-	// handleSubmit(el) {
-	// 	el.preventDefault();
-	// 	axios({
-	// 		url: 'http://localhost:3000/stocks',
-	// 		method: 'POST',
-	// 		data: this.state
-	// 	}).then(response => {
-	// 		console.log('handleSubmit: ', response.data);
-	// 	});
-	// }
 
 	searchItem(el) {
 		el.preventDefault();
@@ -54,8 +30,6 @@ export default class Stocks extends Component {
 
 	componentDidMount(){
 		this.allStocks()
-		// this.handleChange()
-		// this.handleSubmit()
 	}
 
 	render(){
@@ -74,7 +48,7 @@ export default class Stocks extends Component {
 
 		return (
 			<section id="stocks-page-section">
-    			<form onSubmit="" className="search-div">
+    			<form className="search-div">
     				<input type="search" placeholder="Search with Item Number" />
     			</form>
     			<div className="allstocks-table-div">
@@ -93,6 +67,7 @@ export default class Stocks extends Component {
     					</tbody>
     				</table>
     			</div>
+    			<Newstock />
 			</section>
 		)
 	}

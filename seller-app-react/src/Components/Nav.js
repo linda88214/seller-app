@@ -1,19 +1,11 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-export default class Nav extends Component {
-	render() {
+import Footer from './Footer'
 
-		// if(this.props.allUsers === null){
-		// 	return "Loading";
-		// }
-		// else {
-		// 	console.log("Inside Nav:", this.props.allUsers)
-		// 	const currentUser = this.props.allUsers.find(el => {
-		// 		return(
-		// 			el.id = parseInt(this.props.match.params.id, 10)
-		// 		)
-		// 	})
+export default class Nav extends Component {
+
+	render() {
 			if(!this.props.currentUser) {
 				return "Please Log In"
 			}
@@ -31,7 +23,6 @@ export default class Nav extends Component {
 								<p className="brop-button">STOCKS</p>
 								<ul id="dropdown-menu" className="dropdown-content">
 									<li><Link to={`/user/${this.props.currentUser.id}/stocks/all`}>VIEW ALL</Link></li>
-									<li><Link to={`/user/${this.props.currentUser.id}/stocks/new`}>CREATE NEW</Link></li>
 									<li><Link to={`/user/${this.props.currentUser.id}/stocks/update`}>UPDATE</Link></li>
 								</ul>
 							</li>
@@ -41,10 +32,17 @@ export default class Nav extends Component {
 							<li>
 								<Link to={`/user/${this.props.currentUser.id}/orderstatus`}>COMPLETE</Link>
 							</li>
+							<li>
+								<Link to={`/user/${this.props.currentUser.id}/buyers`}>CUSTOMERS</Link>
+							</li>
 						</ul>
 					</nav>
 					<div className="nav-page-heading">
 		    			<h1>Welcome {this.props.currentUser.firstname} {this.props.currentUser.lastname}</h1>
+		    			<button className="log-out-button" onClick={this.props.logout}><Link to="/">Logout</Link></button>
+					</div>
+					<div className="nav-page-footer">
+						<Footer />
 					</div>
 				</div>
 			)

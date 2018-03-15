@@ -22,6 +22,18 @@ li {
   list-style: none;
 }
 
+#profile-page-section,
+#orders-page-section,
+#orderstatus-page-section,
+#newstock-page-section,
+#stocks-page-section,
+#allcustomers-page-section,
+.nav-page-heading {
+  width: 1192px;
+  float: right;
+}
+
+
 /***************************************
   LOGIN PAGE & SIGNUP PAGE
 ***************************************/
@@ -124,8 +136,9 @@ li {
 #main-nav {
   width: 250px;
   height: 100vh;
-  position: absolute;
+  position: absolute fixed;
   left: 0;
+  float: left;
   background-color: #233b5d;
 }
 
@@ -196,17 +209,40 @@ li {
   color: #da3149;
 }
 
-.show {
+/*.show {
   display: block;
+}*/
+
+.nav-page-heading {
+  display: inline-block;
 }
 
 .nav-page-heading h1 {
   background-color: #233b5d;
-  width: 100%;
   text-align: center;
   font-size: 30px;
   padding: 18px 0;
   color: white;
+}
+
+.log-out-button {
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  border: none;
+}
+
+.log-out-button a {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.log-out-button a:hover {
+  color: #da3149;
 }
 
 
@@ -220,7 +256,7 @@ li {
 }
 
 #profile-page-section form {
-  padding: 80px 0 0 200px;
+  padding: 80px 0 0 0;
 }
 
 #profile-page-section form p {
@@ -301,9 +337,9 @@ li {
   position: absolute;
   top: 200px;
   right: 40px;
-  /*border: 1px solid black;*/
-  height: 400px;
-  overflow: hidden;
+  border: 1px solid #e1d6d1;
+  height: 300px;
+  overflow: scroll;
 }
 
 .allorders-table-div {
@@ -336,32 +372,68 @@ table td {
 }
 
 #stocks-page-section table td:nth-child(1),
-#stocks-page-section table td:nth-child(2) {
+#stocks-page-section table td:nth-child(2),
+#newstock-page-section td:nth-child(1),
+#newstock-page-section td:nth-child(2) {
   width: 170px;
 }
 
-#stocks-page-section table td:nth-child(3){
+#stocks-page-section table td:nth-child(3),
+#newstock-page-section td:nth-child(3) {
   width: 500px;
 }
 
-#stocks-page-section table td:last-child{
-  width: 80px;
+#stocks-page-section table td:last-child,
+#newstock-page-section td:last-child {
+  width: 100px;
 }
 
 table tr:nth-child(even){
   background-color: #e1d6d1;
 }
 
-#stocks-page-section .newstock-form {
+
+/***************************************
+  NEW STOCK PAGE
+***************************************/
+
+#newstock-page-section form {
   position: absolute;
-  bottom: 80px;
+  top: 530px;
   right: 40px;
+  padding: 5px;
 }
 
-.searchbar-input-wrap input {
-  width: 600px;
-  padding: 30px;
+#newstock-page-section form h1 {
+  font-size: 27px;
 }
+
+#newstock-page-section form p {
+  display: inline-block;
+  width: 180px;
+  padding: 20px;
+}
+
+#newstock-page-section form input {
+  width: 95%;
+  text-align: left;
+  text-indent: 10px;
+  border: none;
+}
+
+.create-stock-button {
+  width: 150px;
+  background-color: transparent;
+  border-radius: 3px;
+  margin-top: 30px;
+  color: #233b5d ;
+}
+
+.create-stock-button:hover {
+  color: #da3149;
+  cursor: pointer;
+}
+
 
 /***************************************
   SEARCH BAR
@@ -369,7 +441,6 @@ table tr:nth-child(even){
 
 .search-div {
   margin-top: 50px;
-  margin-left: 300px;
 }
 
 .search-div input {
@@ -385,5 +456,81 @@ table tr:nth-child(even){
 .search-div button {
   font-size: 18px;
   
+}
+
+
+
+/***************************************
+  ALL BUYERS
+***************************************/
+
+.allcustomers-table-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 96%;
+  height: 350px;
+  margin-left: 2%;
+  border: 1px solid #e1d6d1;
+  overflow: scroll;
+}
+
+.allcustomers-table-div table {
+  width: 100%;
+  padding: 5px;
+}
+
+#newbuyer-page-section {
+  position: absolute;
+  top: 570px;
+  right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#newbuyer-page-section form {
+  padding: 5px;
+}
+
+#newbuyer-page-section form input {
+  width: 95%;
+  text-align: left;
+  text-indent: 10px;
+  border: none;
+}
+
+.allcustomers-table-div td:nth-child(1) {
+  width: 100px;
+}
+
+.allcustomers-table-div td:nth-child(2) {
+  width: 150px;
+}
+
+.allcustomers-table-div td:nth-child(3) {
+  width: 400px;
+}
+
+#allcustomers-page-section h1 {
+  font-size: 25px;
+  margin: 40px;
+  color: #233b5d;
+}
+
+#newbuyer-page-section td:nth-child(1) {
+  width: 180px;
+}
+
+#newbuyer-page-section td:nth-child(2) {
+  width: 265px;
+}
+
+#newbuyer-page-section td:nth-child(3) {
+  width: 480px;
+}
+
+#newbuyer-page-section td:nth-child(4) {
+  width: 200px;
 }
 
