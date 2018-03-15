@@ -3,11 +3,16 @@ class OrdersController < ApplicationController
 	
 	def index
 		orders = Order.all
+		a = orders.map do |a|
+			[a, a.buyer.name]
+		end
+		p a
 		render json: orders
 	end
 
 	def show
 		order = Order.find(params[:id])
+		p buyer = order.buyer
 		render json: order
 	end
 

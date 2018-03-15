@@ -28,7 +28,9 @@ li {
 #newstock-page-section,
 #stocks-page-section,
 #allcustomers-page-section,
-.nav-page-heading {
+.nav-page-heading,
+#neworders-page-section,
+#updatestocks-page-section {
   width: 1192px;
   float: right;
 }
@@ -213,7 +215,8 @@ li {
   display: block;
 }*/
 
-.nav-page-heading {
+.nav-page-heading,
+.nav-page-footer {
   display: inline-block;
 }
 
@@ -245,6 +248,33 @@ li {
   color: #da3149;
 }
 
+.nav-page-footer {
+  background-color: white;
+  width: 1192px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+}
+
+#footer-page-section h1 {
+  font-size: 16px;
+  color: #233b5d;
+}
+
+#footer-page-section h1 span {
+  color: #da3149;
+}
+
+#footer-page-section h1 a {
+  text-decoration: none;
+  color: #233b5d;
+  font-size: 16px;
+}
+
+#footer-page-section a:hover {
+  color: #da3149;
+}
+
 
 /***************************************
   PROFILE PAGE
@@ -252,7 +282,6 @@ li {
 
 #profile-page-section {
   background-color: white;
-  height: 100vh;
 }
 
 #profile-page-section form {
@@ -342,11 +371,29 @@ li {
   overflow: scroll;
 }
 
+#orders-page-section h1,
+#orderstatus-page-section h1 {
+  font-size: 25px;
+  margin: 50px;
+  color: #233b5d;
+}
+
 .allorders-table-div {
   position: absolute;
   top: 200px;
-  right: 300px;
-  height: 400px;
+  right: 100px;
+  border: 1px solid #e1d6d1;
+  overflow: scroll;
+  height: 280px;
+}
+
+.neworders-table-div {
+  position: absolute;;
+  top: 500px;
+  right: 40px;
+  width: 1110px;
+  display: flex;
+  justify-content: center;
 }
 
 .allorderstatus-table-div {
@@ -354,6 +401,33 @@ li {
   top: 200px;
   right: 120px;
   height: 400px;
+}
+
+.updatestocks-table-div {
+  width: 1110px;
+  border: none;
+  overflow: visible !important;
+}
+
+.updatestocks-table-div h1 {
+  font-size: 25px;
+  margin: 50px;
+}
+
+.updatestocks-table-div p {
+  display: inline-block;
+  width: 180px;
+  text-align: left;
+  padding: 15px;
+}
+
+.updatestocks-table-div input {
+  width: 500px;
+}
+
+.allstocks-table-div table td:hover {
+  color: red;
+  cursor: pointer;
 }
 
 table th {
@@ -421,7 +495,9 @@ table tr:nth-child(even){
   border: none;
 }
 
-.create-stock-button {
+.create-stock-button,
+.create-neworder-button,
+.update-stock-button {
   width: 150px;
   background-color: transparent;
   border-radius: 3px;
@@ -429,11 +505,16 @@ table tr:nth-child(even){
   color: #233b5d ;
 }
 
-.create-stock-button:hover {
+.create-stock-button:hover,
+.create-neworder-button:hover,
+.update-stock-button:hover {
   color: #da3149;
   cursor: pointer;
 }
 
+.update-stock-button {
+  margin-top: 50px;
+}
 
 /***************************************
   SEARCH BAR
@@ -469,7 +550,7 @@ table tr:nth-child(even){
   flex-wrap: wrap;
   justify-content: center;
   width: 96%;
-  height: 350px;
+  height: 300px;
   margin-left: 2%;
   border: 1px solid #e1d6d1;
   overflow: scroll;
@@ -482,7 +563,7 @@ table tr:nth-child(even){
 
 #newbuyer-page-section {
   position: absolute;
-  top: 570px;
+  top: 530px;
   right: 15px;
   display: flex;
   flex-wrap: wrap;

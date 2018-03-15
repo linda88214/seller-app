@@ -30,6 +30,7 @@ export default class NewBuyer extends Component {
             data: this.state
         }).then(resp => {
             console.log("posted?")
+            this.setState(this.props.allCustomers, this.props.history.push(`/user/buyers`))
         })
     }
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
-import NewBuyer from './NewBuyer';
 
 export default class Buyers extends Component {
+
 	render() {
 
 		if(this.props.allCustomers === null){
@@ -40,7 +40,6 @@ export default class Buyers extends Component {
 							{allCustomers}
 						</tbody>
 	    			</table>
-	    			<NewBuyer />
 	    		</div>
 	    	</section>
 		)

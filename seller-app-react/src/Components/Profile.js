@@ -54,6 +54,7 @@ export default class Profile extends Component {
 		}).then(response => {
 			console.log('Profile Deleted', response.data)
 			// this.setState(this.props.history.push('/user/login'))
+			this.setState({redirect: true})
 		}).catch(err => {
 			console.log('error: ', err.response)
 		})
@@ -80,7 +81,7 @@ export default class Profile extends Component {
 	    	}
 
 	    	if(redirect){
-	    		return <Redirect to={`/user/profile/${this.props.match.params.id}`} />
+	    		return <Redirect to={'/user/login'} />
 	    	}
 
 	    	console.log('profile page: ',this.props.currentUser)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +18,7 @@ export default class UserForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('clicked from SignupForm Page')
     this.props.submit(this.state);
   }
 
@@ -52,7 +53,7 @@ export default class UserForm extends Component {
           <input type="password" name="password" onChange={this.handleChange} value={this.state.password} />
         </label>
         <br />
-        <button type="submit" value="Submit"><Link to="/">Submit</Link></button>
+        <button type="submit" value="Submit">Submit</button>
       </form>
     );
   }

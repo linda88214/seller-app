@@ -6,7 +6,9 @@ export default class Stocks extends Component {
 		super(props)
 
 		this.state = {
-			allOrders: []
+			allOrders: [],
+			qty: '',
+			name: ''
 		}
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,46 +24,43 @@ export default class Stocks extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        axios('http://localhost:3000/stocks', {
+        axios('http://localhost:3000/orders', {
             method: "POST",
             data: this.state
         }).then(resp => {
             console.log("posted?")
+
             
         })
     }
 
+
 	render(){
 
-		const allOrders = this.state.allOrders.map((el, key) => {
-			console.log(el)
-			return(
-				<tr key={key}>
-					<td>{el.qty}</td>
-					<td>${el.price}.00</td>
-					<td>{el.total}</td>
-					<td>{el.orderstatus_id}</td>
-				</tr>
-			)
-		})
-
 		return (
-			<section id="orders-page-section">
-    			<div className="allorders-table-div">
-    				<table className="allorders-table">
-    					<thead>
-    						<tr>
-	    						<th>QTY</th>
-	    						<th>Price</th>
-	    						<th>TOTAL</th>
-	    						<th>Status ID</th>
-	    					</tr>
-    					</thead>
-    					<tbody>
-    						{allOrders}
-    					</tbody>
-    				</table>
-    				
+			<section id="neworders-page-section">
+    			<div className="neworders-table-div">
+    				<form onSubmit={this.handleSubmit} className="neworders-form">
+	    				<table className="neworders-table">
+	    					<thead>
+	    						<tr>
+		    						<th>Item Name</th>
+		    						<th>QTY</th>
+		    						<th>Customer Name</th>
+		    					</tr>
+	    					</thead>
+	                        <tbody>
+		                        <tr>
+			    					<td><input type="text" name="itemname" onChange={this.handleChange} value={this.state.itemname} /></td>
+			                        
+			    					<td><input type="text" name="qty" onChange={this.handleChange} value={this.state.qty} /></td>
+			                        
+			    					<td><input type="text" name="name" onChange={this.handleChange} value={this.state.name} /></td>
+		                        </tr>
+	                        </tbody>
+	                    </table>
+    					<button type="submit" value="Submit" className="create-neworder-button">CREATE</button>
+    				</form>
     			</div>
 			</section>
 		)

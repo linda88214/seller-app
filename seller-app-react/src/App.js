@@ -14,37 +14,41 @@ import UpdateStock from "./Components/Updatestock";
 import Orders from "./Components/Orders";
 import Orderstatus from "./Components/Orderstatus";
 import Buyers from "./Components/Buyers";
+import NewBuyer from './Components/NewBuyer';
+import NewOrders from "./Components/NewOrders";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      id: null,
+      id: '',
       allUsers: null,
       currentUser: [],
       allCustomers: null,
+      allOrders: null,
+      allStocks: null,
       redirect: false
     };
-  }
-
-  allUsers() {
-    axios({
-      url: 'http://localhost:3000/users',
-      method: 'get'
-    }).then(response => {
-      this.setState({ allUsers: response.data })
-      // console.log('allUsers: ', this.state.allUsers);
-    });
   }
 
   currentUser() {
     axios({
       url: `http://localhost:3000/users/${this.state.id}`,
-      method: 'get'
+      method: 'GET'
     }).then(response => {
       // console.log('currentUser: ', response.data);
       this.setState({ currentUser: response.data });
+    });
+  }  
+
+  allUsers() {
+    axios({
+      url: 'http://localhost:3000/users',
+      method: 'GET'
+    }).then(response => {
+      this.setState({ allUsers: response.data })
+      // console.log('allUsers: ', this.state.allUsers);
     });
   }
 
@@ -58,10 +62,31 @@ class App extends Component {
     });
   }
 
+  allStocks(){
+    axios({
+      url: 'http://localhost:3000/stocks',
+      method: 'GET'
+    }).then(response => {
+      // console.log('allStocks: ', response);
+      this.setState({ allStocks: response.data });
+    });
+  }
+
+  allOrders(){
+    axios({
+      url: 'http://localhost:3000/orders',
+      method: 'GET'
+    }).then(response => {
+      this.setState({ allOrders: response.data});
+    });
+  }
+
   componentDidMount(){
     this.allUsers();
     this.currentUser();
     this.allCustomers();
+    this.allOrders();
+    this.allStocks();
   }
 
   register(data) {
@@ -134,18 +159,19 @@ class App extends Component {
               }}
             />
 
-            <Route exact path="/user/:id/stocks/all"
+            <Route exact path="/user/stocks/all"
               render={props => {
                 return (
                   <div>
                     <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Stocks {...props} user={this.state.currentUser}/>
+                    <Newstock {...props} allStocks={this.allStocks.bind(this)}/>
                   </div>
                 )
               }}
             />
 
-            <Route exact path="/user/:id/stocks/new"
+            <Route exact path="/user/stocks/new"
               render={props => {
                 return (
                   <div>
@@ -156,7 +182,7 @@ class App extends Component {
               }}
             />
 
-            <Route exact path="/user/:id/stocks/update"
+            <Route exact path="/user/stocks/update/:id"
               render={props => {
                 return (
                   <div>
@@ -167,18 +193,19 @@ class App extends Component {
               }}
             />
 
-            <Route exact path="/user/:id/orders"
+            <Route exact path="/user/orders"
               render={props => {
                 return (
                   <div>
                     <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
-                    <Orders {...props} user={this.state.currentUser} />
+                    <Orders {...props} user={this.state.currentUser} allOrders={this.state.allOrders} allStocks={this.state.allStocks}/>
+                    <NewOrders {...props} />
                   </div>
                 )
               }}
             />
 
-            <Route exact path="/user/:id/orderstatus"
+            <Route exact path="/user/orderstatus"
               render={props => {
                 return (
                   <div>
@@ -189,12 +216,13 @@ class App extends Component {
               }}
             />
 
-            <Route exact path="/user/:id/buyers"
+            <Route exact path="/user/buyers"
               render={props => {
                 return (
                   <div>
                     <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Buyers {...props} allCustomers={this.state.allCustomers} />
+                    <NewBuyer {...props} allCustomers={this.allCustomers.bind(this)} />
                   </div>
                 )
               }}

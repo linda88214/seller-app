@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-import Newstock from "./Newstock";
-
 export default class Stocks extends Component {
 	constructor(props){
 		super(props)
@@ -11,6 +9,7 @@ export default class Stocks extends Component {
 			allStocks: []
 		}
 		this.allStocks = this.allStocks.bind(this)
+		// this.update = this.update.bind(this)
 	}
 
 	allStocks(){
@@ -28,6 +27,11 @@ export default class Stocks extends Component {
 
 	}
 
+	update(id){
+		// console.log('td clicked', id)
+		this.props.history.push(`/user/stocks/update/${id}`)
+	}
+
 	componentDidMount(){
 		this.allStocks()
 	}
@@ -35,8 +39,9 @@ export default class Stocks extends Component {
 	render(){
 
 		const allStocks = this.state.allStocks.map((el, key) => {
+			// console.log(el.id)
 			return(
-				<tr key={key}>
+				<tr key={key} onClick={() => this.update(el.id)}>
 					<td>{el.itemname}</td>
 					<td>{el.itemnumber}</td>
 					<td>{el.description}</td>
@@ -67,7 +72,6 @@ export default class Stocks extends Component {
     					</tbody>
     				</table>
     			</div>
-    			<Newstock />
 			</section>
 		)
 	}

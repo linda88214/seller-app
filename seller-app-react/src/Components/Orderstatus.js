@@ -36,13 +36,14 @@ export default class Stocks extends Component {
 					<td>${el.total}.00</td>
 					<td>{el.status}</td>
 					<td>{el.note}</td>
-					<td>{el.seller_id}</td>
+					<td>{el.user_id}</td>
 				</tr>
 			)
 		})
 
 		return (
 			<section id="orderstatus-page-section">
+				<h1>Order Status</h1>
     			<div className="allorderstatus-table-div">
     				<table className="allorderstatus-table">
     					<thead>

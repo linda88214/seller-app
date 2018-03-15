@@ -9,6 +9,7 @@ export default class Register extends Component {
   }
 
   onSubmit(data) {
+    console.log('submit clicked')
     this.props.submit(data);
   }
 
