@@ -5,7 +5,7 @@ class CreateStocks < ActiveRecord::Migration[5.1]
     	t.string :itemnumber
     	t.string :description
     	t.string :price 
-    	t.integer :stock 
+    	t.string :itemsleft 
 
       t.timestamps
     end

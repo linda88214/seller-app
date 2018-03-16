@@ -12,13 +12,13 @@
 # ])
 
 Stock.create!([
-	{itemname: "Black Hat", itemnumber: "BLH029384", description: "Novelty Black Derby Hat", price: 20, stock: 29},
-	{itemname: "Silver Watch", itemnumber: "SVW847392", description: "Silver Watch from USA", price: 299, stock: 11},
-	{itemname: "Gold Watch", itemnumber: "GDW738202", description: "Gold Watch from USA", price: 399, stock: 7},
-	{itemname: "Bracelet", itemnumber: "BRC394792", description: "Personalized Silver Bracelet for Women", price: 129.99, stock: 12},
-	{itemname: "iPhone", itemnumber: "IPH938478", description: "White iPhone 8 Plus", price: 800, stock: 2},
-	{itemname: "Juul", itemnumber: "JLV938478", description: "Gold color JUUL Vapor", price: 25, stock: 30},
-	{itemname: "Juul Pod", itemnumber: "JLP938479", description: "JUUL Pod Strawberry Flavor", price: 20, stock: 45}
+	{itemname: "Black Hat", itemnumber: "BLH029384", description: "Novelty Black Derby Hat", price: "20", itemsleft: "29"},
+	{itemname: "Silver Watch", itemnumber: "SVW847392", description: "Silver Watch from USA", price: "299", itemsleft: "11"},
+	{itemname: "Gold Watch", itemnumber: "GDW738202", description: "Gold Watch from USA", price: "399", itemsleft: "7"},
+	{itemname: "Bracelet", itemnumber: "BRC394792", description: "Personalized Silver Bracelet for Women", price: 129.99, itemsleft: "12"},
+	{itemname: "iPhone", itemnumber: "IPH938478", description: "White iPhone 8 Plus", price: "800", itemsleft: "2"},
+	{itemname: "Juul", itemnumber: "JLV938478", description: "Gold color JUUL Vapor", price: "25", itemsleft: "30"},
+	{itemname: "Juul Pod", itemnumber: "JLP938479", description: "JUUL Pod Strawberry Flavor", price: "20", itemsleft: "45"}
 ])
 
 Buyer.create!([
@@ -28,17 +28,17 @@ Buyer.create!([
 ])
 
 Order.create!([
-	{itemname: "Black Hat", qty: 2, total: 40, buyer_id: 1},
-	{itemname: "Juul", qty: 1, total: 25, buyer_id: 1},
-	{itemname: "Juul Pod", qty: 2, total: 40, buyer_id: 1},
-	{itemname: "iPhone", qty: 1, total: 800, buyer_id: 2},
-	{itemname: "Gold Watch", qty: 1, total: 399, buyer_id: 3}
+	{itemname: "Black Hat", itemnumber: "BLH029384", qty: "2", total: "40", buyer_id: 1},
+	{itemname: "Juul", itemnumber: "JLV938478", qty: "1", total: "25", buyer_id: 1},
+	{itemname: "Juul Pod", itemnumber: "JLP938479", qty: "2", total: "40", buyer_id: 1},
+	{itemname: "iPhone", itemnumber: "IPH938478", qty: "1", total: "800", buyer_id: "2"},
+	{itemname: "Gold Watch", itemnumber: "GDW738202", qty: "1", total: "399", buyer_id: 3}
 ])
 
-Orderstatus.create!([
-	{total: 399, status: "Pending", note: "Customer will pick up", buyer_id: 2},
-	{total: 60, status: "Complete", note: "", buyer_id: 1}
-])
+# Orderstatus.create!([
+# 	{ordernumber: "1",  total: "399", status: "Pending", note: "Customer will pick up", buyer_id: 2, user_id: 1},
+# 	{ordernumber: "2", total: "60", status: "Complete", note: "", buyer_id: 1, user_id: 1}
+# ])
 
 
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios'
+import TokenService from "../services/TokenService"
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -12,7 +14,8 @@ export default class Stocks extends Component {
 			itemnumber: '',
 			description: '',
 			price: '',
-			stock: ''
+			itemsleft: '',
+			redirect: false
 		}
 		this.allStocks = this.allStocks.bind(this)
 		this.currentStock = this.currentStock.bind(this)
@@ -22,6 +25,10 @@ export default class Stocks extends Component {
 
 	allStocks(){
 		axios({
+			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
 			url: 'http://localhost:3000/stocks',
 			method: 'get'
 		}).then(response => {
@@ -32,10 +39,14 @@ export default class Stocks extends Component {
 
   	currentStock() {
   		axios({
+  			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
   			url: `http://localhost:3000/stocks/${this.props.match.params.id}`,
   			method:'GET'
   		}).then(response => {
-  			console.log('currentStock: ', response.data)
+  			// console.log('currentStock: ', response.data)
   			this.setState({ currentStock: response.data})
   		})
   	}
@@ -51,23 +62,35 @@ export default class Stocks extends Component {
 	handleSubmit(el) {
 		el.preventDefault();
 		axios({
+			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
 			url: `http://localhost:3000/stocks/${this.props.match.params.id}`,
 			method: 'PUT',
 			data: this.state
 		}).then(response => {
 			console.log('handleSubmit: ', response.data);
-		});
+			this.setState({redirect: true})
+		}).catch(e => {
+    		console.log(e);
+    	})
 	}
 
 	componentDidMount(){
 		this.allStocks()
 		this.currentStock()
-		// this.handleChange()
-		// this.handleSubmit()
 	}
 
 	render(){
 		const currentStock = this.state.currentStock
+		const redirect = this.state.redirect
+		// console.log(redirect)
+
+		if(redirect){
+			return <Redirect to="/user/stocks/all" /> 
+		}
+
 		return (
 			<section id="updatestocks-page-section">
     			<div className="updatestocks-table-div">
@@ -94,7 +117,7 @@ export default class Stocks extends Component {
 					        <br />
 
 					        <label><p>Stock:</p>
-					          <input type="text" name="stock" onChange={this.handleChange} value={this.state.stock} placeholder={currentStock.stock} />
+					          <input type="text" name="itemsleft" onChange={this.handleChange} value={this.state.itemsleft} placeholder={currentStock.itemsleft} />
 					        </label>
 					        <br />
 
@@ -106,26 +129,3 @@ export default class Stocks extends Component {
 	}
 }
 
-
-
-
-// <table className="updatestocks-table">
-//     					<thead>
-//     						<tr>
-// 	    						<th>Item Name</th>
-// 	    						<th>Item Number</th>
-// 	    						<th>Description</th>
-// 	    						<th>Price</th>
-// 	    						<th>Stocks</th>
-// 	    					</tr>
-//     					</thead>
-//     					<tbody>
-//     						<tr>
-//     							<td><input name="itemname" placeholder={currentStock.itemname} value={this.state.itemname} onChange={this.handleChange} /></td>
-//     							<td><input name="itemnumber" placeholder={currentStock.itemnumber} value={this.state.itemnumber} onChange={this.handleChange} /></td>
-//     							<td><input name="description" placeholder={currentStock.description} value={this.state.description} onChange={this.handleChange} /></td>
-//     							<td><input name="price" placeholder={currentStock.price} value={this.state.price} onChange={this.handleChange} /></td>
-//     							<td><input name="stock" placeholder={currentStock.stock} value={this.state.stock} onChange={this.handleChange} /></td>
-//     						</tr>
-//     					</tbody>
-//     				</table>

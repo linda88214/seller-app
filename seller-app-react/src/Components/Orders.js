@@ -10,8 +10,6 @@ export default class Stocks extends Component {
 		}
 	}
 
-
-
 	render(){
 
 		if(this.props.allOrders === null ){
@@ -26,10 +24,9 @@ export default class Stocks extends Component {
 				<tr key={key}>
 					<td>{el.itemname}</td>
 					<td>{el.itemnumber}</td>
-					<td>{el.description}</td>
 					<td>{el.qty}</td>
 					<td>{el.total}</td>
-					<td>{el.buyer}</td>
+					<td>Ellen</td>
 				</tr>
 			)
 		}) 
@@ -43,7 +40,6 @@ export default class Stocks extends Component {
     						<tr>
 	    						<th>Item Name</th>
 	    						<th>Item Number</th>
-	    						<th>Description</th>
 	    						<th>QTY</th>
 	    						<th>Total</th>
 	    						<th>Customer Name</th>

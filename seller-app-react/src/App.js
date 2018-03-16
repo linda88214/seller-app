@@ -28,12 +28,17 @@ class App extends Component {
       allCustomers: null,
       allOrders: null,
       allStocks: null,
-      redirect: false
+      redirect: false,
+      signupRedirect: false,
     };
   }
 
   currentUser() {
     axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
       url: `http://localhost:3000/users/${this.state.id}`,
       method: 'GET'
     }).then(response => {
@@ -44,6 +49,10 @@ class App extends Component {
 
   allUsers() {
     axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
       url: 'http://localhost:3000/users',
       method: 'GET'
     }).then(response => {
@@ -54,7 +63,11 @@ class App extends Component {
 
   allCustomers() {
     axios({
-      url: `http://localhost:3000/buyers`,
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      url: 'http://localhost:3000/buyers',
       method: 'GET'
     }).then(response => {
       this.setState({ allCustomers: response.data })
@@ -64,6 +77,10 @@ class App extends Component {
 
   allStocks(){
     axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
       url: 'http://localhost:3000/stocks',
       method: 'GET'
     }).then(response => {
@@ -74,6 +91,10 @@ class App extends Component {
 
   allOrders(){
     axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
       url: 'http://localhost:3000/orders',
       method: 'GET'
     }).then(response => {
@@ -90,17 +111,28 @@ class App extends Component {
   }
 
   register(data) {
-    axios('http://localhost:3000/users/', {
+    axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      url: 'http://localhost:3000/users/',
       method: "POST",
       data
     }).then(resp => {
       TokenService.save(resp.data.token)
+      this.setState({signupRedirect: true})
     })
     .catch(err => console.log(`err: ${err}`));
   }
 
   login(data) {
-    axios('http://localhost:3000/users/login', {
+    axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      url: 'http://localhost:3000/users/login',
       method: "POST",
       data
     }).then(resp => {
@@ -143,7 +175,7 @@ class App extends Component {
             />
 
             <Route exact path="/user/signup"
-              render={props => { return <Signup {...props} submit={this.register.bind(this)} redirect={this.state.redirect} id={this.state.id} /> }}
+              render={props => { return <Signup {...props} submit={this.register.bind(this)} redirect={this.state.signupRedirect} id={this.state.id} /> }}
             />
 
             <Route exact path="/user/profile/:id"
@@ -199,7 +231,7 @@ class App extends Component {
                   <div>
                     <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Orders {...props} user={this.state.currentUser} allOrders={this.state.allOrders} allStocks={this.state.allStocks}/>
-                    <NewOrders {...props} />
+                    <NewOrders {...props} allStocks={this.state.allStocks} allCustomers={this.state.allCustomers} />
                   </div>
                 )
               }}

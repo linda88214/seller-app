@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import TokenService from "../services/TokenService"
 
 export default class Stocks extends Component {
     constructor(props){
@@ -10,7 +11,7 @@ export default class Stocks extends Component {
             itemnumber: '',
             description: '',
             price: '',
-            stock: ''
+            itemsleft: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,20 +27,32 @@ export default class Stocks extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        axios('http://localhost:3000/stocks', {
+        axios({
+            headers: {
+                'Content-type': 'application/json',
+                Authorization: `Bearer ${TokenService.read()}`,
+            },
+            url: 'http://localhost:3000/stocks',
             method: "POST",
             data: this.state
         }).then(resp => {
             console.log("posted?")
             this.setState(this.props.allStocks, this.props.history.push(`/user/stocks/all`))
-
+            document.getElementById("newstock-form").reset();
+            this.setState({
+                itemname: '',
+                itemnumber: '',
+                description: '',
+                price: '',
+                itemsleft: ''                
+            })
         })
     }
 
 	render(){
 		return (
 			<section id="newstock-page-section">
-    			<form onSubmit={this.handleSubmit} className="newstock-form">
+    			<form onSubmit={this.handleSubmit} className="newstock-form" id="newstock-form">
                     <table>
                         <tbody>
                         <tr>
@@ -51,7 +64,7 @@ export default class Stocks extends Component {
                         
     					<td><input type="text" name="price" onChange={this.handleChange} value={this.state.price} /></td>
                         
-    					<td><input type="text" name="stock" onChange={this.handleChange} value={this.state.stock} /></td>
+    					<td><input type="text" name="itemsleft" onChange={this.handleChange} value={this.state.stock} /></td>
                         </tr>
                         </tbody>
                     </table>

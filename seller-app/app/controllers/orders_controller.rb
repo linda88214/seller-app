@@ -22,11 +22,14 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		order = Order.new(order_params)
+		order = Order.create!(order_params)
+		order.save
 
 		if order.save
 			redirect_to orders_path
+			render json: order
 		else
+			puts 'didnt save'
 			render :action => :new
 		end
 	end
@@ -52,6 +55,6 @@ class OrdersController < ApplicationController
 	private 
 
 	def order_params
-		params.require(:order).permit(:qty, :price, :total, :buyer_id, :stock_id, :orderstatus_id)
+		params.require(:order).permit(:itemname, :qty, :itemnumber, :total)
 	end	
 end

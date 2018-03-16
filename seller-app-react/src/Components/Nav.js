@@ -27,9 +27,6 @@ export default class Nav extends Component {
 								<Link to={`/user/orders`}>ORDERS</Link>
 							</li>				
 							<li>
-								<Link to={`/user/orderstatus`}>STATUS</Link>
-							</li>
-							<li>
 								<Link to={`/user/buyers`}>CUSTOMERS</Link>
 							</li>
 						</ul>
@@ -46,3 +43,9 @@ export default class Nav extends Component {
 		// }
 	}
 }
+
+
+// 
+// 							<li>
+// 								<Link to={`/user/orderstatus`}>STATUS</Link>
+// 							</li>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import TokenService from "../services/TokenService"
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -14,17 +15,16 @@ export default class Stocks extends Component {
 
 	allStocks(){
 		axios({
+			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
 			url: 'http://localhost:3000/stocks',
-			method: 'get'
+			method: 'GET'
 		}).then(response => {
 			// console.log('allStocks: ', response);
 			this.setState({ allStocks: response.data });
 		});
-	}
-
-	searchItem(el) {
-		el.preventDefault();
-
 	}
 
 	update(id){
@@ -46,16 +46,14 @@ export default class Stocks extends Component {
 					<td>{el.itemnumber}</td>
 					<td>{el.description}</td>
 					<td>${el.price}.00</td>
-					<td>{el.stock}</td>
+					<td>{el.itemsleft}</td>
 				</tr>
 			)
 		})
 
 		return (
 			<section id="stocks-page-section">
-    			<form className="search-div">
-    				<input type="search" placeholder="Search with Item Number" />
-    			</form>
+				<h1>ALL STOCKS</h1>
     			<div className="allstocks-table-div">
     				<table className="allstocks-table">
     					<thead>

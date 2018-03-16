@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-	# before_action :ensure_signed_in
+	before_action :ensure_signed_in
 	
 	def index
 		stocks = Stock.all
@@ -47,6 +47,6 @@ class StocksController < ApplicationController
 	private 
 
 	def stock_params
-		params.require(:stock).permit(:itemname, :itemnumber, :description, :price, :stock)
+		params.require(:stock).permit(:itemname, :itemnumber, :description, :price, :itemsleft)
 	end
 end

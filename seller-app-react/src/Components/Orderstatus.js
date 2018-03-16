@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import TokenService from "../services/TokenService"
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -13,10 +14,14 @@ export default class Stocks extends Component {
 
 	allOrderStatus(){
 		axios({
+			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
 			url: 'http://localhost:3000/orderstatuses',
 			method: 'get'
 		}).then(response => {
-			console.log('allOrderStatus: ', response);
+			// console.log('allOrderStatus: ', response);
 			this.setState({ allOrderStatus: response.data });
 		});
 	}
@@ -28,7 +33,7 @@ export default class Stocks extends Component {
 	render(){
 
 		const allOrderStatus = this.state.allOrderStatus.map((el,key) => {
-			console.log(el)
+			// console.log(el)
 			return (
 				<tr key={key}>
 					<td>{el.ordernumber}</td>
@@ -43,7 +48,7 @@ export default class Stocks extends Component {
 
 		return (
 			<section id="orderstatus-page-section">
-				<h1>Order Status</h1>
+				<h1>ORDER STATUS</h1>
     			<div className="allorderstatus-table-div">
     				<table className="allorderstatus-table">
     					<thead>

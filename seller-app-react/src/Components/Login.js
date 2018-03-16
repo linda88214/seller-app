@@ -9,13 +9,13 @@ export default class Login extends Component {
   }
 
   onSubmit(data) {
-    console.log(`handling submit: ${data}`);
+    // console.log(`handling submit: ${data}`);
     this.props.submit(data);
   }
 
 	render() {
 		const redirect = this.props.redirect;
-
+    // console.log(redirect)
 		if(redirect){
       		return <Redirect to={`/user/profile/${this.props.id}`}/>;
     	}

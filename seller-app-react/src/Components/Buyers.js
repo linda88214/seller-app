@@ -25,7 +25,7 @@ export default class Buyers extends Component {
 
 		return(
 			<section id="allcustomers-page-section">
-				<h1>All Customers Information</h1>
+				<h1>ALL CUSTOMERS</h1>
 				<div className="allcustomers-table-div">
 					<table className="allcustomers-table">
 						<thead>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SignupForm from './SignupForm';
 
 export default class Register extends Component {
@@ -14,6 +14,12 @@ export default class Register extends Component {
   }
 
   render() {
+    const redirect = this.props.redirect;
+    // console.log(redirect)
+    if(redirect){
+          return <Redirect to={'/user/login'}/>;
+      }
+
     return (
       <div id="signup-page">
         <Link to="/user/login" className="login-link"> LOGIN </Link>

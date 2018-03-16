@@ -31,7 +31,7 @@ li {
 .nav-page-heading,
 #neworders-page-section,
 #updatestocks-page-section {
-  width: 1192px;
+  width: 1190px;
   float: right;
 }
 
@@ -372,7 +372,9 @@ li {
 }
 
 #orders-page-section h1,
-#orderstatus-page-section h1 {
+#orderstatus-page-section h1,
+#stocks-page-section h1,
+#allcustomers-page-section h1 {
   font-size: 25px;
   margin: 50px;
   color: #233b5d;
@@ -381,15 +383,20 @@ li {
 .allorders-table-div {
   position: absolute;
   top: 200px;
-  right: 100px;
+  right: 20px;
   border: 1px solid #e1d6d1;
   overflow: scroll;
   height: 280px;
+  width: 1140px;
+}
+
+.allorders-table {
+  width: 100%;
 }
 
 .neworders-table-div {
   position: absolute;;
-  top: 500px;
+  top: 550px;
   right: 40px;
   width: 1110px;
   display: flex;
@@ -591,12 +598,6 @@ table tr:nth-child(even){
 
 .allcustomers-table-div td:nth-child(3) {
   width: 400px;
-}
-
-#allcustomers-page-section h1 {
-  font-size: 25px;
-  margin: 40px;
-  color: #233b5d;
 }
 
 #newbuyer-page-section td:nth-child(1) {

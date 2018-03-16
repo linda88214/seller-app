@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-
+import TokenService from "../services/TokenService"
 
 export default class Profile extends Component {
 	constructor(props) {
@@ -14,7 +14,7 @@ export default class Profile extends Component {
 			email: '',
 			password: '',
 			currentUserId: null,
-			redirect: false
+			deleteRedirect: false
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -34,12 +34,16 @@ export default class Profile extends Component {
 	handleSubmit(el) {
 		el.preventDefault();
 		axios({
+			headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
 			url: `http://localhost:3000/users/${this.props.match.params.id}`,
 			method: 'PUT',
 			data: this.state
 		}).then(response => {
 			console.log('handleSubmit: ', response.data);
-			this.setState({ redirect: true })
+			this.setState({ deleteRedirect: true })
 		})
 			.catch(err => {
 			console.log('err: ', err.response)
@@ -53,8 +57,7 @@ export default class Profile extends Component {
 			method: 'DELETE'
 		}).then(response => {
 			console.log('Profile Deleted', response.data)
-			// this.setState(this.props.history.push('/user/login'))
-			this.setState({redirect: true})
+			this.props.history.push('/user/login')
 		}).catch(err => {
 			console.log('error: ', err.response)
 		})
@@ -63,28 +66,31 @@ export default class Profile extends Component {
 	confirmationAlert(e){
 		e.preventDefault();
 		if(window.confirm("Are you sure to delete your account?")) {
+			this.setState({deleteRedirect: true})
 			this.deleteProfile()
 		}
 	}
 
 	render(){
+		const redirect = this.state.deleteRedirect
+	  	console.log('delete redirect: ', redirect)
+
+  		if(redirect){
+    		return <Redirect to={'/user/login'} />
+    	}
+	    	
 		if(this.props.allUsers === null) {
 			return "Loading";
 		}
 		else {
 
 	  		const currentUser = this.props.currentUser
-	  		const { redirect } = this.state.redirect
 
 	    	if(!currentUser){
 	    		return "Please Log In"
 	    	}
 
-	    	if(redirect){
-	    		return <Redirect to={'/user/login'} />
-	    	}
-
-	    	console.log('profile page: ',this.props.currentUser)
+	    	// console.log('profile page: ',this.props.currentUser)
 	    	return(
 		    	<section id="profile-page-section">
 	    			<div className="delete-profile">
@@ -112,11 +118,7 @@ export default class Profile extends Component {
 							<input type="text" name="email" onChange={this.handleChange} placeholder={currentUser.email} value={this.state.email} />
 						</label>
 						<br />
-						<label htmlFor="password">
-							<p>Password:</p>
-							<input type="password" name="password" onChange={this.handleChange} placeholder={currentUser.password} value={this.state.password} />
-						</label>
-						<br />
+						
 						<button type="submit" value="submit">Update</button>
 				    </form>
 				</section> 
