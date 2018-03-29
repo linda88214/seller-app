@@ -97,6 +97,8 @@ export default class Profile extends Component {
 	    				<button onClick={this.confirmationAlert}>&#10005;</button>
 	    				<span className="delete-text">DELETE</span>
 	    			</div>
+	    			<h1>Update Your Profile</h1>
+	    			<h3>Type in all information</h3>
 	    			<form onSubmit={this.handleSubmit}>
 						<label htmlFor="username">
 							<p>Username:</p>

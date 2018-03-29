@@ -16,6 +16,8 @@ import Orderstatus from "./Components/Orderstatus";
 import Buyers from "./Components/Buyers";
 import NewBuyer from './Components/NewBuyer';
 import NewOrders from "./Components/NewOrders";
+import Calendar from "./Components/Calendar";
+import Tasks from "./Components/Tasks";
 
 class App extends Component {
   constructor(props) {
@@ -255,6 +257,28 @@ class App extends Component {
                     <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
                     <Buyers {...props} allCustomers={this.state.allCustomers} />
                     <NewBuyer {...props} allCustomers={this.allCustomers.bind(this)} />
+                  </div>
+                )
+              }}
+            />
+
+            <Route exact path="/user/calendar"
+              render={props => {
+                return (
+                  <div>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
+                    <Calendar />
+                  </div>
+                )
+              }}
+            />
+
+            <Route exact path="/user/tasks"
+              render={props => {
+                return (
+                  <div>
+                    <Nav {...props} currentUser={this.state.currentUser} logout={this.logout.bind(this)}/>
+                    <Tasks />
                   </div>
                 )
               }}

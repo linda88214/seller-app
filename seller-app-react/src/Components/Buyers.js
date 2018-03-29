@@ -1,17 +1,44 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
+import axios from 'axios';
+import TokenService from "../services/TokenService"
 
 export default class Buyers extends Component {
+	constructor(props){
+		super(props)
+
+		this.state = {
+			allCustomers: []
+		}
+	}
+
+  allCustomers() {
+    axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      url: 'http://localhost:3000/buyers',
+      method: 'GET'
+    }).then(response => {
+      this.setState({ allCustomers: response.data })
+      // console.log('allCustomers: ', this.state.allCustomers);
+    });
+  }
+
+   componentDidMount(){
+    this.allCustomers()
+  }
 
 	render() {
 
-		if(this.props.allCustomers === null){
+		if(this.state.allCustomers === null){
 			return "Loading"
 		} 
 		else{
 		
 			// console.log('Buyers page: ', this.props.allCustomers)
-			const allCustomers = this.props.allCustomers.map((el, key) => {
+			const allCustomers = this.state.allCustomers.map((el, key) => {
 				// console.log(el.id)
 	    		return(
 	    			<tr key={key}>

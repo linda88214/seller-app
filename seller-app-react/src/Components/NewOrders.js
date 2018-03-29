@@ -31,10 +31,10 @@ export default class Stocks extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios({
-        // 	headers: {
-		      //   'Content-type': 'application/json',
-		      //   Authorization: `Bearer ${TokenService.read()}`,
-      		// },
+        	headers: {
+		        'Content-type': 'application/json',
+		        Authorization: `Bearer ${TokenService.read()}`,
+      		},
       		url: 'http://localhost:3000/orders', 
             method: "POST",
             data: this.state
@@ -47,23 +47,6 @@ export default class Stocks extends Component {
 
 
 	render(){
-		// if(this.props.allStocks === null) {
-		// 	return "Loading"
-		// } else {
-
-		// const stock = this.props.allCustomers.find(el => {
-		// 	console.log(this.state.name)
-		// 	if(this.state.name.toLowerCase() === el.name.toLowerCase()) {
-		// 		// this.setState({itemnumber: el.itemnumber})
-		// 		// this.setState({description: el.description})
-		// 		console.log(el.name)
-		// 		return el
-		// 	}
-		// 	else {}
-		// })
-
-		// console.log(stock)
-
 		return (
 			<section id="neworders-page-section">
     			<div className="neworders-table-div">

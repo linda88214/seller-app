@@ -13,6 +13,10 @@ export default class Nav extends Component {
 
 			return(
 				<div>
+					<div className="nav-page-heading">
+		    			<h1>Welcome {this.props.currentUser.firstname} {this.props.currentUser.lastname}</h1>
+		    			<button className="log-out-button" onClick={this.props.logout}><Link to="/">Logout</Link></button>
+					</div>				
 					<nav id="main-nav">
 						<div className="logo">SELLERS</div>
 						<ul>
@@ -29,12 +33,12 @@ export default class Nav extends Component {
 							<li>
 								<Link to={`/user/buyers`}>CUSTOMERS</Link>
 							</li>
+							<li>
+								<Link to={'/user/calendar'}>CALENDAR</Link>
+							</li>
+							
 						</ul>
 					</nav>
-					<div className="nav-page-heading">
-		    			<h1>Welcome {this.props.currentUser.firstname} {this.props.currentUser.lastname}</h1>
-		    			<button className="log-out-button" onClick={this.props.logout}><Link to="/">Logout</Link></button>
-					</div>
 					<div className="nav-page-footer">
 						<Footer />
 					</div>
@@ -49,3 +53,8 @@ export default class Nav extends Component {
 // 							<li>
 // 								<Link to={`/user/orderstatus`}>STATUS</Link>
 // 							</li>
+
+
+							// <li>
+							// 	<Link to={'/user/tasks'}>TASKS</Link>
+							// </li>

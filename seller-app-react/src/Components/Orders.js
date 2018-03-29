@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
+import TokenService from "../services/TokenService"
 
 export default class Stocks extends Component {
 	constructor(props){
@@ -10,15 +11,32 @@ export default class Stocks extends Component {
 		}
 	}
 
+  allOrders(){
+    axios({
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      url: 'http://localhost:3000/orders',
+      method: 'GET'
+    }).then(response => {
+      this.setState({ allOrders: response.data});
+    });
+  }
+
+  componentDidMount(){
+    this.allOrders()
+  }
+
 	render(){
 
-		if(this.props.allOrders === null ){
+		if(this.state.allOrders === null ){
 			return "loading"
 		} else {
 
 		// console.log("allOrders: ", this.props.allOrders)
 		// console.log("allStocks: ", this.props.allStocks)
-		const allOrders = this.props.allOrders.map((el, key) => {
+		const allOrders = this.state.allOrders.map((el, key) => {
 			// console.log(el)
 			return (
 				<tr key={key}>

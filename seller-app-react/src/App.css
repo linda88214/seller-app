@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Mina', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -30,8 +30,10 @@ li {
 #allcustomers-page-section,
 .nav-page-heading,
 #neworders-page-section,
-#updatestocks-page-section {
-  width: 1190px;
+#updatestocks-page-section,
+.nav-page-footer,
+.updatestocks-table-div {
+  width: 1670px;
   float: right;
 }
 
@@ -49,7 +51,7 @@ li {
 
 #login-page h1,
 #signup-page h1 {
-  font-size: 40px;
+  font-size: 50px;
   padding-top: 25px;
 }
 
@@ -61,9 +63,9 @@ li {
 #signup-page form {
   border: 1px solid white;
   width: 50%;
-  height: 500px;
+  height: 550px;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 25%;
   border-radius: 5px;
 }
@@ -77,14 +79,14 @@ li {
 }
 
 #login-page p {
-  font-size: 25px;
+  font-size: 30px;
   margin: 40px auto 20px auto;
 }
 
 #login-page input, 
 #signup-page input {
-  width: 300px;
-  height: 30px;
+  width: 350px;
+  height: 40px;
   text-indent: 5px;
 }
 
@@ -98,6 +100,7 @@ li {
   border-radius: 3px;
   margin-top: 40px;
   color: white;
+  padding: 3px;
 }
 
 #signup-page button a {
@@ -126,8 +129,9 @@ li {
 
 #signup-page p {
   display: inline-block;
-  padding: 20px;
-  width: 150px;
+  padding: 15px;
+  width: 200px;
+  font-size: 25px;
 }
 
 
@@ -147,7 +151,7 @@ li {
 #main-nav .logo {
   color: white;
   padding: 18px 0;
-  font-size: 30px;
+  font-size: 45px;
 }
 
 #main-nav ul {
@@ -155,14 +159,15 @@ li {
 }
 
 #main-nav li {
-  height: 70px;
-  padding-top: 30px;
+  height: 80px;
+  padding-top: 40px;
   border-bottom: 1px solid white;
 }
 
 #main-nav a {
   text-decoration: none;
   color: white;
+  font-size: 25px;
 }
 
 #main-nav li:hover,
@@ -223,7 +228,7 @@ li {
 .nav-page-heading h1 {
   background-color: #233b5d;
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   padding: 18px 0;
   color: white;
 }
@@ -231,7 +236,7 @@ li {
 .log-out-button {
   background-color: transparent;
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 25px;
   border: none;
 }
@@ -240,7 +245,7 @@ li {
   background-color: transparent;
   color: white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 22px;
   text-decoration: none;
 }
 
@@ -249,15 +254,14 @@ li {
 }
 
 .nav-page-footer {
-  background-color: white;
-  width: 1192px;
+  /*background-color: white;*/
   height: 40px;
   position: absolute;
   bottom: 0;
 }
 
 #footer-page-section h1 {
-  font-size: 16px;
+  font-size: 20px;
   color: #233b5d;
 }
 
@@ -268,7 +272,7 @@ li {
 #footer-page-section h1 a {
   text-decoration: none;
   color: #233b5d;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 #footer-page-section a:hover {
@@ -284,8 +288,24 @@ li {
   background-color: white;
 }
 
+#profile-page-section h1,
+#profile-page-section h3 {
+  color: #233b5d;
+}
+
+#profile-page-section h1 {
+  font-size: 30px;
+  padding-top: 50px;
+}
+
+#profile-page-section h3 {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
 #profile-page-section form {
   padding: 80px 0 0 0;
+  padding-top: 100px;
 }
 
 #profile-page-section form p {
@@ -294,10 +314,11 @@ li {
   width: 200px;
   color: #233b5d;
   font-weight: bold;
+  font-size: 25px;
 }
 
 #profile-page-section form input {
-  width: 300px;
+  width: 350px;
   border: 1px solid #e1d6d1
 }
 
@@ -320,7 +341,7 @@ li {
 }
 
 #profile-page-section .delete-profile button {
-  font-size: 30px;
+  font-size: 60px;
   text-align: center;
   color: #da3149;
   border: none;
@@ -336,8 +357,8 @@ li {
 #profile-page-section .delete-text {
   position: absolute;
   z-index: 1;
-  font-size: 17px;
-  bottom: 8px;
+  font-size: 20px;
+  bottom: 30px;
   left: -100px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -364,11 +385,11 @@ li {
 
 #stocks-page-section .allstocks-table-div {
   position: absolute;
-  top: 200px;
-  right: 40px;
+  top: 250px;
+  right: 270px;
   border: 1px solid #e1d6d1;
-  height: 300px;
-  overflow: scroll;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 #orders-page-section h1,
@@ -382,11 +403,11 @@ li {
 
 .allorders-table-div {
   position: absolute;
-  top: 200px;
-  right: 20px;
+  top: 250px;
+  right: 270px;
   border: 1px solid #e1d6d1;
-  overflow: scroll;
-  height: 280px;
+  overflow-y: scroll;
+  height: 400px;
   width: 1140px;
 }
 
@@ -396,8 +417,8 @@ li {
 
 .neworders-table-div {
   position: absolute;;
-  top: 550px;
-  right: 40px;
+  top: 700px;
+  right: 285px;
   width: 1110px;
   display: flex;
   justify-content: center;
@@ -411,13 +432,11 @@ li {
 }
 
 .updatestocks-table-div {
-  width: 1110px;
-  border: none;
-  overflow: visible !important;
+  /*border: none;*/
 }
 
 .updatestocks-table-div h1 {
-  font-size: 25px;
+  font-size: 30px;
   margin: 50px;
 }
 
@@ -480,8 +499,8 @@ table tr:nth-child(even){
 
 #newstock-page-section form {
   position: absolute;
-  top: 530px;
-  right: 40px;
+  top: 700px;
+  right: 300px;
   padding: 5px;
 }
 
@@ -557,10 +576,11 @@ table tr:nth-child(even){
   flex-wrap: wrap;
   justify-content: center;
   width: 96%;
-  height: 300px;
+  height: 400px;
   margin-left: 2%;
   border: 1px solid #e1d6d1;
-  overflow: scroll;
+  overflow-y: scroll;
+
 }
 
 .allcustomers-table-div table {
@@ -570,8 +590,8 @@ table tr:nth-child(even){
 
 #newbuyer-page-section {
   position: absolute;
-  top: 530px;
-  right: 15px;
+  top: 700px;
+  right: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -601,18 +621,59 @@ table tr:nth-child(even){
 }
 
 #newbuyer-page-section td:nth-child(1) {
-  width: 180px;
+  width: 280px;
 }
 
 #newbuyer-page-section td:nth-child(2) {
-  width: 265px;
+  width: 355px;
 }
 
 #newbuyer-page-section td:nth-child(3) {
-  width: 480px;
+  width: 600px;
 }
 
 #newbuyer-page-section td:nth-child(4) {
-  width: 200px;
+  width: 300px;
 }
 
+.calendar {
+  width: 1650px;
+  float: right;
+  display: flex;
+  justify-content: center;
+}
+
+.rc-calendar-panel {
+  padding-top: 80px;
+}
+
+.rc-calendar-input {
+  margin: 20px;
+}
+
+.rc-calendar-today-btn {
+  margin: 20px;
+  display: inline-block;
+}
+
+.rc-calendar-today-btn,
+.rc-calendar-month-select,
+.rc-calendar-year-select,
+.rc-calendar-cell,
+.rc-calendar-decade-panel-cell,
+.rc-calendar-year-panel-cell {
+  cursor: pointer;
+}
+
+.rc-calendar-decade-panel-cell {
+  width: 250px;
+}
+
+.comingsoon-div {
+  padding-top: 300px;
+}
+
+.comingsoon-div h1 {
+  font-size: 100px;
+  color: #233b5d;
+}
